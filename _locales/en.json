@@ -1,0 +1,201 @@
+{
+  "$schema": "https://raw.githubusercontent.com/crymetothemoon/json_schemas/master/web_ext_i18n.json",
+  "@%": {
+    "message": "@%"
+  },
+  "fps %@": {
+    "message": "FPS: %@"
+  },
+  "dots drawn %@": {
+    "message": "Dots Drawn: %@"
+  },
+  "reset": {
+    "message": "Reset"
+  },
+  "help": {
+    "message": "Help"
+  },
+  "download": {
+    "message": "Download"
+  },
+  "download tooltip": {
+    "message": "Save as image"
+  },
+  "recording": {
+    "message": "Start Recording"
+  },
+  "recording inprogress": {
+    "message": "STOP Recording"
+  },
+  "recording tooltip": {
+    "message": "Capture canvas changes"
+  },
+  "game control": {
+    "message": "Parameters"
+  },
+  "canvas control": {
+    "message": "Painting"
+  },
+  "game info": {
+    "message": "More..."
+  },
+  "polygon": {
+    "message": "Polygon"
+  },
+  "jump function": {
+    "message": "Function"
+  },
+  "compression ratio %@": {
+    "message": "Compression: %@"
+  },
+  "speed": {
+    "message": "Speed"
+  },
+  "triangle": {
+    "message": "Triangle"
+  },
+  "square": {
+    "message": "Square"
+  },
+  "pentagon": {
+    "message": "Pentagon"
+  },
+  "hexagon": {
+    "message": "Hexagon"
+  },
+  "heptagon": {
+    "message": "Heptagon"
+  },
+  "octagon": {
+    "message": "Octagon"
+  },
+  "nonagon": {
+    "message": "Nonagon"
+  },
+  "decagon": {
+    "message": "Decagon"
+  },
+  "hendecagon": {
+    "message": "Hendecagon"
+  },
+  "dodecagon": {
+    "message": "Dodecagon"
+  },
+  "presets": {
+    "message": "Presets"
+  },
+  "none": {
+    "message": "Free"
+  },
+  "force_CW": {
+    "message": "Counter Clockwise"
+  },
+  "noSameDir": {
+    "message": "No Repeat"
+  },
+  "last_noSameDir": {
+    "message": "No Repeat - 2"
+  },
+  "noAcross": {
+    "message": "No Across"
+  },
+  "last_noAcross": {
+    "message": "No Across - 2"
+  },
+  "noAdjacent_exclusive": {
+    "message": "No Adjacent"
+  },
+  "last_noAdjacent_exclusive": {
+    "message": "No Adjacent - 2"
+  },
+  "noAdjacent_inclusive": {
+    "message": "Trial - 1"
+  },
+  "last_noAdjacent_inclusive": {
+    "message": "Trial - 2"
+  },
+  "slowest": {
+    "message": "Slowest"
+  },
+  "slower": {
+    "message": "Slower"
+  },
+  "slow": {
+    "message": "Slow"
+  },
+  "normal": {
+    "message": "Normal"
+  },
+  "fast": {
+    "message": "Fast"
+  },
+  "ridiculous": {
+    "message": "Ridiculous"
+  },
+  "ludicrous": {
+    "message": "Ludicrous"
+  },
+  "tracer enable": {
+    "message": "Tracer"
+  },
+  "tracer": {
+    "message": "Tracer"
+  },
+  "colour a": {
+    "message": "Colour A"
+  },
+  "colour b": {
+    "message": "Colour B"
+  },
+  "outdated browser modal title": {
+    "message": "Please upgrade your browser"
+  },
+  "require webgl2 wasm": {
+    "message": "This App requires WebGL2"
+  },
+  "info modal title": {
+    "message": "Chaos Game"
+  },
+  "how does it work": {
+    "message": "Chaos Game - Explained"
+  },
+  "how does it work desc": {
+    "message": "iterated function system"
+  },
+  "mathematica chaos": {
+    "message": "Generalized Chaos Game"
+  },
+  "mathematica chaos desc": {
+    "message": "Professor draws some shapes"
+  },
+  "rectangle world": {
+    "message": "Rectangle World"
+  },
+  "rectangle world desc": {
+    "message": "Even more fractal visualizers"
+  },
+  "what is the chaos game": {
+    "message": "What is the Chaos Game?"
+  },
+  "what is the chaos game desc": {
+    "message": "The Chaos Game is an interactive fractal generation algorithm."
+  },
+  "how do i start": {
+    "message": "How do i start?"
+  },
+  "how do i start desc": {
+    "message": "By clicking on a random spot inside the polygon"
+  },
+  "game params": {
+    "message": "My unique fractals?"
+  },
+  "game params desc": {
+    "message": "Yes: By messing with generation parameters to your left."
+  },
+  "game slow": {
+    "message": "What if im impatient?"
+  },
+  "game slow desc": {
+    "message": "Change Speed -> Fast under parameters (to your left)."
+  }
+}

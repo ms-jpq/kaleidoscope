@@ -1,0 +1,94 @@
+#reset-button {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  z-index: 1000;
+}
+
+#save-media {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  z-index: 1000;
+}
+
+#help-tag {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  z-index: 1000;
+}
+
+#statistics-tracker {
+  position: absolute;
+  top: 0.1em;
+  right: 0.3em;
+  z-index: 1000;
+}
+
+.splitter {
+  cursor: col-resize;
+  width: 0.3em !important;
+  position: unset !important;
+  font-size: unset !important;
+  background-color: darkgray;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 100vh;
+}
+.canvas-container:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.canvas-container > canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.accordion-header {
+  height: 3em;
+}
+.accordion-section {
+  border-bottom: 0;
+  overflow: unset !important;
+  line-height: 0.7em;
+}
+
+.colour-picker {
+  min-width: 3em;
+  max-width: 3em;
+}
+.popover-body {
+  display: none !important;
+}
+
+.waiting {
+  cursor: wait;
+}
+.clickable {
+  cursor: pointer;
+}
+.crosshair {
+  cursor: crosshair;
+}
+
+.outdated-browser-img {
+  width: 15em;
+}
+
+.game-control-label {
+  line-height: 1.5em;
+}
+
+.game-info-label {
+  line-height: 1.5em;
+}
