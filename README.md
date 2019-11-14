@@ -1,4 +1,4 @@
-# Kaleidoscope
+# [Kaleidoscope](https://ms-jpq.github.io/kaleidoscope/)
 
 The Chaos Game is a [randomized fractal generation algorithm](https://en.wikipedia.org/wiki/Iterated_function_system).
 
