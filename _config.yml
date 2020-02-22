@@ -1,1 +1,11 @@
 theme: jekyll-theme-cayman
+
+title: Kaleidoscope 
+
+showcase: True
+
+desc: >-
+  Interactive & arbitrary Chaos Game fractal visualization tool
+
+images:
+  - https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/demo_heavy.gif
