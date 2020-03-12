@@ -49,7 +49,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./dist; parcel build src/index.html && ./build.sh",
+    "build": "rm -rf ./dist; parcel build --public-url /kaleidoscope-page src/index.html && ./build.sh",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\"",
     "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\""
   },
