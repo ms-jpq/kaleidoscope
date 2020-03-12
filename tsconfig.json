@@ -2,22 +2,27 @@
   "compileOnSave": true,
   "compilerOptions": {
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "jsx": "react",
+    "module": "commonjs",
     "moduleResolution": "node",
     "newLine": "LF",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "outDir": "./out",
+    "outDir": "dist",
     "removeComments": true,
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "esnext"
+    "target": "ES2019",
+    "useDefineForClassFields": true
   },
-  "exclude": ["./node_modules/"],
+  "exclude": ["node_modules", "test", "dist"],
   "include": ["*.ts", "*.tsx", "*/**/*.ts", "*/**/*.tsx"]
 }

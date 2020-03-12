@@ -20,7 +20,10 @@ const entry = path.resolve(__dirname, "page/index.tsx")
 const config: webpack.Configuration = {
   mode,
   entry,
-  externals: exclude.reduce((acc, curr) => Object.assign(acc, { [curr]: `root ${curr}` }), {}),
+  externals: exclude.reduce(
+    (acc, curr) => Object.assign(acc, { [curr]: `root ${curr}` }),
+    {},
+  ),
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
@@ -33,7 +36,7 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.tsx?$/,
-        use: ["awesome-typescript-loader", "eslint-loader"],
+        use: ["awesome-typescript-loader"],
         exclude: /node_modules/,
       },
       {
@@ -85,13 +88,17 @@ const config: webpack.Configuration = {
       cache: true,
       xhtml: true,
       inject: "head",
-      title: "🐳",
+      title: "Kaleidoscope",
       meta: {
         viewport: "width=device-width, initial-scale=1",
       },
     }),
-    new CopyWebpackPlugin([{ from: path.resolve(__dirname, "./_locales"), to: base }]),
-    new CopyWebpackPlugin([{ from: path.resolve(__dirname, "./out/main.wasm"), to: base }]),
+    new CopyWebpackPlugin([
+      { from: path.resolve(__dirname, "./_locales"), to: base },
+    ]),
+    new CopyWebpackPlugin([
+      { from: path.resolve(__dirname, "./out/main.wasm"), to: base },
+    ]),
   ],
   optimization: {
     splitChunks: {
