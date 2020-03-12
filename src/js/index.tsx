@@ -7,6 +7,7 @@ import { Page } from "./components/page"
 import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
 import { render } from "react-dom"
 import { shuffle } from "nda/dist/isomorphic/rand"
+import "./deps"
 
 const go = async () => {
   const { run, retrieve } = await Instantiate("main.wasm")

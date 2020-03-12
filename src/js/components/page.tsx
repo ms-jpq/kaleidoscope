@@ -16,8 +16,6 @@ import { SaveMedia } from "./save-media"
 import { StatisticsTracker } from "./statistics-tracker"
 import { Store } from "../redux/state"
 import { throttle } from "nda/dist/isomorphic/decorator"
-import "jquery-ui/ui/widgets/resizable"
-import "bootstrap"
 import {
   NewCanvas,
   NewFrameSize,

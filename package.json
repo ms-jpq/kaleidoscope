@@ -1,5 +1,8 @@
 {
   "author": "Fly me to the moon",
+  "browserslist": [
+    "last 5 Chrome versions"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@types/bootstrap": "^4.3.1",
@@ -19,7 +22,8 @@
     "parcel-bundler": "^1.12.4",
     "popper.js": "^1.16.1",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "sass": "^1.26.3"
   },
   "description": "",
   "devDependencies": {
@@ -30,16 +34,14 @@
     "eslint-config-prettier": "*",
     "eslint-plugin-prettier": "*",
     "prettier": "*",
-    "sass": "^1.26.3",
     "ts-node": "*",
     "typescript": "*"
   },
   "license": "MIT",
   "scripts": {
+    "build": "parcel build src/index.html",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\"",
-    "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\"",
-    "srv": "webpack-dashboard webpack-dev-server",
-    "webpack": "webpack"
+    "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\""
   },
   "version": "1.0.0"
 }
