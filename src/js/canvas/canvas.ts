@@ -1,6 +1,6 @@
-import fragmentShader from "../../shaders/shader.fsh"
-import offscreenShader from "../../shaders/offscreen-shader.vsh"
-import onscreenShader from "../../shaders/onscreen-shader.vsh"
+import fragmentShader from "../../shaders/shader.frag"
+import offscreenShader from "../../shaders/offscreen-shader.vert"
+import onscreenShader from "../../shaders/onscreen-shader.vert"
 import { Colours } from "../redux/state"
 import { DrawingInstructions, ReleaseDrawingInstructions } from "../interlope"
 import {
