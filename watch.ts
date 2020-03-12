@@ -33,12 +33,19 @@ const main = async () => {
   const exts = ["json", "ts", "tsx", "scss", "go", "frag", "vert"]
   const git_ignore = await slurp(".gitignore")
   const ignore = parse(git_ignore)
-  const exec1 = "npm run build"
+  const exec1 = "parcel build ./src/index.html"
+  const exec2 = "./build.sh"
   watch({
     ext: exts.join(),
     colours: true,
     ignore,
-    exec1,
+    exec: exec1,
+  })
+  watch({
+    ext: exts.join(),
+    colours: true,
+    ignore,
+    exec: exec2,
   })
   srv(dist_dir, port)
 }
