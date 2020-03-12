@@ -1,8 +1,9 @@
-import { GET } from "./xhr"
 import { PromiseType } from "nda/dist/typings"
 
-export const NewI18n = async (lang: string, warn: boolean) => {
-  const store = await GET<Record<string, { message: string }>>(`${lang}.json`)()
+export const NewI18n = (
+  store: Record<string, { message: string }>,
+  warn: boolean,
+) => {
   return (key: string, ...symbols: (string | number)[]): string => {
     const replace = ((idx) => () => symbols[idx++] as string)(0)
     if (warn && !Reflect.has(store, key)) {
@@ -12,4 +13,4 @@ export const NewI18n = async (lang: string, warn: boolean) => {
   }
 }
 
-export type I18n = PromiseType<ReturnType<typeof NewI18n>>
+export type I18n = ReturnType<typeof NewI18n>

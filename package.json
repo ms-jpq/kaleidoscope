@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html && ./build.sh",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\"",
     "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\""
   },

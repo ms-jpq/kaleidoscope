@@ -18,6 +18,27 @@ import {
 } from "../redux/thunk-actions"
 import { Store } from "../redux/state"
 
+type PProps = {
+  htmlFor: string
+  label: string
+  children: React.ReactNode
+}
+
+const FormGroup = (props: PProps) => {
+  const { label, htmlFor, children } = props
+  return (
+    <div className={"form-group"}>
+      <label
+        htmlFor={htmlFor}
+        className={_("font-weight-bold", "game-control-label")}
+      >
+        {label}
+      </label>
+      {children}
+    </div>
+  )
+}
+
 type Props = {
   Lang: I18n
   store: Store
@@ -115,25 +136,5 @@ export const GameControl = (props: Props) => {
         </FormGroup>
       </form>
     </AccordionSection>
-  )
-}
-
-type PProps = {
-  htmlFor: string
-  label: string
-  children: React.ReactNode
-}
-const FormGroup = (props: PProps) => {
-  const { label, htmlFor, children } = props
-  return (
-    <div className={"form-group"}>
-      <label
-        htmlFor={htmlFor}
-        className={_("font-weight-bold", "game-control-label")}
-      >
-        {label}
-      </label>
-      {children}
-    </div>
   )
 }

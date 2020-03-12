@@ -7,7 +7,7 @@ import { Page } from "./components/page"
 import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
 import { render } from "react-dom"
 import { shuffle } from "nda/dist/isomorphic/rand"
-import "./deps"
+import { lang } from "./deps"
 
 const go = async () => {
   const { run, retrieve } = await Instantiate("main.wasm")
@@ -38,7 +38,7 @@ const main = async () => {
     store.dispatch(WasmLoaded(exports))
     store.dispatch(PageLoaded(randomPresets))
   })()
-  const Lang = await NewI18n("en", true)
+  const Lang = NewI18n(lang, true)
   const div = document.body.appendChild(document.createElement("div"))
   store.subscribe(() =>
     render(
