@@ -270,7 +270,7 @@ export const NewDownload = (): TA => async (fetch, dispatch) => {
     return
   }
   const { screenshot } = canvas.render
-  download(`${String(Math.random()).replace(".", "")}.png`, screenshot())
+  download(screenshot(), `${String(Math.random()).replace(".", "")}.png`)
 }
 
 export const NewRecording = (): TA => (fetch, dispatch) => {
@@ -296,7 +296,7 @@ export const NewRecording = (): TA => (fetch, dispatch) => {
         { mimeType: "video/webm" },
         (blob) => {
           const uri = URL.createObjectURL(blob)
-          download(`${String(Math.random()).replace(".", "")}.webm`, uri)
+          download(uri, `${String(Math.random()).replace(".", "")}.webm`)
           setTimeout(() => URL.revokeObjectURL(uri))
         },
       )
