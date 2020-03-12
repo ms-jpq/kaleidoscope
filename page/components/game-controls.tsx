@@ -1,5 +1,3 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
-import ps from "./page.css"
 import React from "react"
 import { AccordionSection } from "./accordion"
 import {
@@ -61,7 +59,7 @@ export const GameControl = (props: Props) => {
         <FormGroup htmlFor="polygon-input" label={Lang("polygon")}>
           <select
             id="polygon-input"
-            className={bs.formControl}
+            className={"form-control"}
             value={polygon}
             onChange={newPolygon}
           >
@@ -75,7 +73,7 @@ export const GameControl = (props: Props) => {
         <FormGroup htmlFor="jumpfn-input" label={Lang("jump function")}>
           <select
             id="jumpfn-input"
-            className={bs.formControl}
+            className={"form-control"}
             value={jumpFunction}
             onChange={newJumpFn}
           >
@@ -92,7 +90,7 @@ export const GameControl = (props: Props) => {
         >
           <input
             id="compression-input"
-            className={_(bs.formControlRange, bs.customRange)}
+            className={_("form-control-range", "custom-range")}
             type="range"
             min="0"
             max="1"
@@ -104,7 +102,7 @@ export const GameControl = (props: Props) => {
         <FormGroup htmlFor="speed-input" label={Lang("speed")}>
           <select
             id="speed-input"
-            className={bs.formControl}
+            className={"form-control"}
             value={speed}
             onChange={newSpeed}
           >
@@ -128,10 +126,10 @@ type PProps = {
 const FormGroup = (props: PProps) => {
   const { label, htmlFor, children } = props
   return (
-    <div className={bs.formGroup}>
+    <div className={"form-group"}>
       <label
         htmlFor={htmlFor}
-        className={_(bs.fontWeightBold, ps.gameControlLabel)}
+        className={_("font-weight-bold", "game-control-label")}
       >
         {label}
       </label>

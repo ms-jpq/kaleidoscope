@@ -1,5 +1,3 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
-import ps from "./page.css"
 import React from "react"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
@@ -30,9 +28,9 @@ const Display = (props: DProps & Props) => {
   const onClick = () => dispatch(NewPreset(preset))
 
   return (
-    <li className={_(bs.listGroupItem, bs.p2)}>
-      <div className={_(bs.card, ps.clickable)} onClick={onClick}>
-        <img className={_(bs.cardImg)} src={image} />
+    <li className={_("list-group-item", "p-2")}>
+      <div className={_("card", "clickable")} onClick={onClick}>
+        <img className={_("card-img")} src={image} />
       </div>
     </li>
   )
@@ -42,12 +40,17 @@ export const DisplayCase = (props: DCProps & Props) => {
   const { Lang, store, presets } = props
 
   return (
-    <div className={_(bs.dFlex, bs.flexColumn, bs.py2, bs.bgLight, bs.w100)}>
-      <section className={bs.w100}>
-        <h4 className={bs.textCenter}>{Lang("presets")}</h4>
+    <div className={_("d-flex", "flex-column", "py-2", "bg-light", "w-100")}>
+      <section className={"w-100"}>
+        <h4 className={"text-center"}>{Lang("presets")}</h4>
       </section>
       <ul
-        className={_(bs.listGroup, bs.listGroupFlush, bs.w100, bs.overflowAuto)}
+        className={_(
+          "list-group",
+          "list-group-flush",
+          "w-100",
+          "overflow-auto",
+        )}
       >
         {presets.map((preset) => (
           <Display

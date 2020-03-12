@@ -1,5 +1,3 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
-import ps from "./page.css"
 import React from "react"
 import { AccordionSection } from "./accordion"
 import { cn as _ } from "nda/dist/isomorphic/dom"
@@ -47,14 +45,14 @@ export const CanvasControl = (props: Props) => {
         <h5>{Lang("canvas control")}</h5>
       </a>
       <form>
-        <div className={bs.formRow}>
-          <div className={bs.col}>
+        <div className={"form-row"}>
+          <div className={"col"}>
             <div
-              className={_(bs.customControl, bs.customSwitch, bs.formControl)}
+              className={_("custom-control", "custom-switch", "form-control")}
             >
               <input
                 id="tracer-enable-input"
-                className={bs.customControlInput}
+                className={"custom-control-input"}
                 type="checkbox"
                 checked={drawTracers === "on"}
                 onChange={newDrawTracers}
@@ -62,17 +60,17 @@ export const CanvasControl = (props: Props) => {
               <label
                 htmlFor="tracer-enable-input"
                 className={_(
-                  bs.customControlLabel,
-                  bs.ml2,
-                  bs.textNowrap,
-                  ps.clickable,
+                  "custom-control-label",
+                  "ml-2",
+                  "text-nowrap",
+                  "clickable",
                 )}
               >
                 {Lang("tracer enable")}
               </label>
             </div>
           </div>
-          <div className={bs.col}>
+          <div className={"col"}>
             <ColourInputGroup
               id="colour-tracer"
               label={Lang("tracer")}
@@ -82,8 +80,8 @@ export const CanvasControl = (props: Props) => {
           </div>
         </div>
         <hr />
-        <div className={bs.formRow}>
-          <div className={bs.col}>
+        <div className={"form-row"}>
+          <div className={"col"}>
             <ColourInputGroup
               id="colour-a"
               label={Lang("colour a")}
@@ -91,7 +89,7 @@ export const CanvasControl = (props: Props) => {
               onChange={newColourA}
             />
           </div>
-          <div className={bs.col}>
+          <div className={"col"}>
             <ColourInputGroup
               id="colour-b"
               label={Lang("colour b")}

@@ -1,4 +1,3 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
@@ -20,12 +19,12 @@ export const StatisticsTracker = (props: Props) => {
   return (
     <aside
       id="statistics-tracker"
-      className={_(bs.dFlex, bs.flexColumn, bs.textRight, bs.textPrimary)}
+      className={_("d-flex", "flex-column", "text-right", "text-primary")}
     >
-      <output className={bs.textTruncate}>
+      <output className={"text-truncate"}>
         {fps === 0 ? "" : Lang("fps %@", fps.toFixed(1))}
       </output>
-      <output className={bs.textTruncate}>
+      <output className={"text-truncate"}>
         {dotsDrawn === 0 ? "" : Lang("dots drawn %@", dotsDrawn)}
       </output>
     </aside>

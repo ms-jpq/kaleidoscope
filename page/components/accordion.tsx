@@ -1,10 +1,8 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
-import ps from "./page.css"
 import React from "react"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 
 export const Accordion = (props: { children: React.ReactNode }) => (
-  <div className={bs.accordion}>{props.children}</div>
+  <div className={"accordion"}>{props.children}</div>
 )
 
 type Props = {
@@ -17,9 +15,9 @@ export const AccordionSection = (props: Props) => {
   const { id, defaultShow, children } = props
   const [head = <div />, body = <div />] = React.Children.toArray(children)
   return (
-    <section key={id} className={_(ps.accordionSection, bs.card)}>
+    <section key={id} className={_("accordion-section", "card")}>
       <div
-        className={_(ps.accordionHeader, bs.cardHeader, bs.textTruncate)}
+        className={_("accordion-header", "card-header", "text-truncate")}
         data-toggle="collapse"
         data-target={`#${id}`}
       >
@@ -27,7 +25,7 @@ export const AccordionSection = (props: Props) => {
       </div>
       <div
         id={id}
-        className={_(bs.cardBody, bs.collapse, { show: defaultShow })}
+        className={_("card-body", "collapse", { show: defaultShow })}
       >
         {body}
       </div>

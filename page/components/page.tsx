@@ -1,9 +1,6 @@
 import $ from "jquery"
-import bs from "bootstrap/dist/css/bootstrap.min.css"
-import ps from "./page.css"
 import React from "react"
 import ResizeObserver from "resize-observer-polyfill"
-import rs from "jquery-ui/themes/base/resizable.css"
 import { Accordion } from "./accordion"
 import { Between } from "../domain_agnostic/utils"
 import { CanvasControl } from "./canvas-controls"
@@ -162,8 +159,8 @@ export const Page = (props: Props) => {
 
   return (
     <React.StrictMode>
-      <div className={_(bs.vh100, bs.vw100, bs.dFlex)}>
-        <div ref={leftPanelRef} className={_(bs.vh100, bs.overflowAuto)}>
+      <div className={_("vh-100", "vw-100", "d-flex")}>
+        <div ref={leftPanelRef} className={_("vh-100", "overflow-auto")}>
           <Accordion>
             <GameControl Lang={Lang} store={store} />
             <CanvasControl Lang={Lang} store={store} />
@@ -173,29 +170,29 @@ export const Page = (props: Props) => {
         <div
           ref={splitterLeftRef}
           className={_(
-            ps.splitter,
-            bs.h100,
-            rs.uiResizableHandle,
-            rs.uiResizableE,
+            "splitter",
+            "h-100",
+            "ui-resizable-handle",
+            "ui-resizable-e",
           )}
         />
         <main
           className={_(
-            bs.h100,
-            bs.flexGrow1,
-            bs.dFlex,
-            bs.flexColumn,
-            bs.justifyContentCenter,
-            bs.alignItemsCenter,
-            bs.positionRelative,
+            "h-100",
+            "flex-grow-1",
+            "d-flex",
+            "flex-column",
+            "justify-content-center",
+            "align-items-center",
+            "position-relative",
             {
-              [ps.waiting]: wasm === "loading",
+              waiting: wasm === "loading",
             },
           )}
         >
           <span id="reset-button" data-toggle="tooltip" title={Lang("reset")}>
             <button
-              className={_(bs.btn, bs.btnOutlineDanger)}
+              className={_("btn", "btn-outline-danger")}
               onClick={onResetButton}
             >
               <em>{Lang("reset")}</em>
@@ -206,12 +203,12 @@ export const Page = (props: Props) => {
           <span
             id="help-tag"
             ref={modalButtonRef}
-            className={_(ps.clickable)}
+            className={_("clickable")}
             data-toggle="tooltip"
             title={Lang("help")}
           >
             <button
-              className={_(bs.btn, bs.btnSm, bs.btnOutlineSecondary)}
+              className={_("btn", "btn-sm", "btn-outline-secondary")}
               data-toggle="modal"
               data-target="#info-modal"
             >
@@ -220,21 +217,21 @@ export const Page = (props: Props) => {
           </span>
           {wasm === "loading" ? <Loaders /> : undefined}
           <div
-            className={_(ps.canvasContainer, {
-              [bs.dNone]: wasm === "loading",
+            className={_("canvas-container", {
+              "d-none": wasm === "loading",
             })}
           >
             <canvas ref={canvasRef} onMouseDown={onMouseDown} />
           </div>
         </main>
-        <aside ref={rightPanelRef} className={_(bs.vh100, bs.dFlex)}>
+        <aside ref={rightPanelRef} className={_("vh-100", "d-flex")}>
           <div
             ref={splitterRightRef}
             className={_(
-              ps.splitter,
-              bs.h100,
-              rs.uiResizableHandle,
-              rs.uiResizableW,
+              "splitter",
+              "h-100",
+              "ui-resizable-handle",
+              "ui-resizable-w",
             )}
           />
           <DisplayCase Lang={Lang} store={store} presets={presets} />

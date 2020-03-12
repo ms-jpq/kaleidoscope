@@ -48,19 +48,10 @@ const config: webpack.Configuration = {
               modules: {
                 localIdentName: "[local]",
               },
-              localsConvention: "camelCaseOnly",
+              localsConvention: "asIs",
             },
           },
         ],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-          },
-        },
       },
       {
         test: /\.(fsh|vsh)$/,

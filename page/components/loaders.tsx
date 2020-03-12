@@ -1,4 +1,3 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 
@@ -6,23 +5,23 @@ export const Loaders = () => {
   return (
     <div
       className={_(
-        bs.flexGrow1,
-        bs.w100,
-        bs.h100,
-        bs.dFlex,
-        bs.flexColumn,
-        bs.justifyContentCenter,
-        bs.alignContentCenter,
+        "flex-grow-1",
+        "w-100",
+        "h-100",
+        "d-flex",
+        "flex-column",
+        "justify-content-center",
+        "align-content-center",
       )}
     >
-      <div className={_(bs.dFlex, bs.justifyContentCenter)}>
-        <div className={_(bs.spinnerGrow, bs.textPrimary)} />
-        <div className={_(bs.spinnerGrow, bs.textSecondary)} />
-        <div className={_(bs.spinnerGrow, bs.textSuccess)} />
-        <div className={_(bs.spinnerGrow, bs.textDanger)} />
-        <div className={_(bs.spinnerGrow, bs.textWarning)} />
-        <div className={_(bs.spinnerGrow, bs.textInfo)} />
-        <div className={_(bs.spinnerGrow, bs.textDark)} />
+      <div className={_("d-flex", "justify-content-center")}>
+        <div className={_("spinner-grow", "text-primary")} />
+        <div className={_("spinner-grow", "text-secondary")} />
+        <div className={_("spinner-grow", "text-success")} />
+        <div className={_("spinner-grow", "text-danger")} />
+        <div className={_("spinner-grow", "text-warning")} />
+        <div className={_("spinner-grow", "text-info")} />
+        <div className={_("spinner-grow", "text-dark")} />
       </div>
     </div>
   )

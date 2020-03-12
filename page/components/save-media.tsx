@@ -1,4 +1,3 @@
-import bs from "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
@@ -22,10 +21,10 @@ export const SaveMedia = (props: Props) => {
   const onDownloadButton = () => dispatch(NewDownload())
 
   return (
-    <div id="save-media" className={_(bs.dFlex, bs.flexColumn)}>
+    <div id="save-media" className={_("d-flex", "flex-column")}>
       <button
-        className={_(bs.btn, bs.btnOutlinePrimary, {
-          [bs.active]: status === "recording",
+        className={_("btn", "btn-outline-primary", {
+          active: status === "recording",
         })}
         data-toggle="tooltip"
         title={Lang("recording tooltip")}
@@ -37,9 +36,9 @@ export const SaveMedia = (props: Props) => {
             : Lang("recording")}
         </em>
       </button>
-      <span className={bs.my1} />
+      <span className={"my-1"} />
       <button
-        className={_(bs.btn, bs.btnOutlineInfo)}
+        className={_("btn", "btn-outline-info")}
         data-toggle="tooltip"
         title={Lang("download tooltip")}
         onClick={onDownloadButton}

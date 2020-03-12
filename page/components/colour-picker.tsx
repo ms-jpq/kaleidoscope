@@ -1,14 +1,11 @@
 import $ from "jquery"
-import bs from "bootstrap/dist/css/bootstrap.min.css"
 //@ts-ignore
 import Huebee from "huebee"
-import ps from "./page.css"
 import React from "react"
 import { $ as $_ } from "nda/dist/browser/dom"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { Colour } from "../redux/state"
 import "huebee/dist/huebee.min.css"
-
 
 const Hex = {
   "0": 0,
@@ -77,7 +74,7 @@ export const ColourPicker = (props: Props) => {
     <input
       id={id}
       ref={inputRef}
-      className={_(ps.colourPicker, ps.clickable, bs.formControl)}
+      className={_("colour-picker", "clickable", "form-control")}
       style={{ backgroundColor: `rgb(${R}, ${G}, ${B})` }}
       data-trigger="focus"
       data-boundary="viewport"
@@ -94,11 +91,11 @@ type PProps = {
 export const ColourInputGroup = (props: PProps & Props) => {
   const { label, colour, onChange, id } = props
   return (
-    <div className={_(bs.inputGroup, bs.flexNowrap)}>
-      <div className={_(bs.inputGroupPrepend, bs.flexGrow1)}>
+    <div className={_("input-group", "flex-nowrap")}>
+      <div className={_("input-group-prepend", "flex-grow-1")}>
         <label
           htmlFor={id}
-          className={_(bs.inputGroupText, bs.flexGrow1, ps.clickable)}
+          className={_("input-group-text", "flex-grow-1", "clickable")}
         >
           {label}
         </label>
