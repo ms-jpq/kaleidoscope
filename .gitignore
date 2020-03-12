@@ -6,4 +6,6 @@ dist
 temp
 artifacts
 wasm_go.js
+*.wasm
 npm-debug.log
+.cache/

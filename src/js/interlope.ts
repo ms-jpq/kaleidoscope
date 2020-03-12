@@ -1,6 +1,6 @@
 import { Polygon, Restriction } from "./game-constants"
-import "./wasm.exec"
-import "./wasm_go.js"
+import "../wasm.exec"
+import "../wasm_go.js"
 
 declare const Go: any
 

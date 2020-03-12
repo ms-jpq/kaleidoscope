@@ -1,6 +1,5 @@
 import $ from "jquery"
 import React from "react"
-import ResizeObserver from "resize-observer-polyfill"
 import { Accordion } from "./accordion"
 import { Between } from "../domain_agnostic/utils"
 import { CanvasControl } from "./canvas-controls"
@@ -17,10 +16,7 @@ import { SaveMedia } from "./save-media"
 import { StatisticsTracker } from "./statistics-tracker"
 import { Store } from "../redux/state"
 import { throttle } from "nda/dist/isomorphic/decorator"
-import "../css/page.css"
 import "jquery-ui/ui/widgets/resizable"
-import "@fortawesome/fontawesome-free/css/all.css"
-import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap"
 import {
   NewCanvas,
@@ -88,20 +84,20 @@ export const Page = (props: Props) => {
     const modalButton = modalButtonRef.current!
     const { clientWidth } = document.documentElement
 
-    new ResizeObserver(
-      throttle(
-        resizeThrottle,
-        ([
-          {
-            contentRect: { width, height },
-          },
-        ]: ResizeObserverEntry[]) => {
-          canvas!.width = width * devicePixelRatio
-          canvas!.height = height * devicePixelRatio
-          dispatch(NewFrameSize())
+    const resize = throttle(
+      resizeThrottle,
+      ([
+        {
+          contentRect: { width, height },
         },
-      ),
-    ).observe(canvas!)
+      ]: ReadonlyArray<ResizeObserverEntry>) => {
+        canvas!.width = width * devicePixelRatio
+        canvas!.height = height * devicePixelRatio
+        dispatch(NewFrameSize())
+      },
+    )
+
+    new ResizeObserver(resize).observe(canvas!)
 
     $(leftPanel!)
       .width(`${clientWidth * minLeftPanel}px`)

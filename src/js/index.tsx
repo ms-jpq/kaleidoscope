@@ -5,7 +5,6 @@ import { NewI18n } from "./domain_agnostic/i18n"
 import { NewStateStore } from "./redux/state"
 import { Page } from "./components/page"
 import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
-import { ready } from "nda/dist/browser/dom"
 import { render } from "react-dom"
 import { shuffle } from "nda/dist/isomorphic/rand"
 
@@ -38,7 +37,7 @@ const main = async () => {
     store.dispatch(WasmLoaded(exports))
     store.dispatch(PageLoaded(randomPresets))
   })()
-  const [Lang] = await Promise.all([NewI18n("en", true), ready()])
+  const Lang = await NewI18n("en", true)
   const div = document.body.appendChild(document.createElement("div"))
   store.subscribe(() =>
     render(
