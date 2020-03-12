@@ -4,7 +4,6 @@ package-lock.json
 out
 dist
 temp
-*.css.d.ts
+artifacts
 wasm_go.js
 npm-debug.log
-kaleidoscope-page

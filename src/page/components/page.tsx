@@ -17,8 +17,10 @@ import { SaveMedia } from "./save-media"
 import { StatisticsTracker } from "./statistics-tracker"
 import { Store } from "../redux/state"
 import { throttle } from "nda/dist/isomorphic/decorator"
+import "../css/page.css"
 import "jquery-ui/ui/widgets/resizable"
-import "@fortawesome/fontawesome-free/js/all"
+import "@fortawesome/fontawesome-free/css/all.css"
+import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap"
 import {
   NewCanvas,
