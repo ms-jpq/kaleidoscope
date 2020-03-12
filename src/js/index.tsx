@@ -1,3 +1,4 @@
+import en from "../_locales/en.json"
 import React from "react"
 import { DEFAULT_STATE, PRESETS } from "./game-constants"
 import { GoExports, Instantiate } from "./interlope"
@@ -7,7 +8,9 @@ import { Page } from "./components/page"
 import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
 import { render } from "react-dom"
 import { shuffle } from "nda/dist/isomorphic/rand"
-import { lang } from "./deps"
+import "../wasm_go.js"
+import "jquery-ui-dist"
+import "bootstrap"
 
 const go = async () => {
   const { run, retrieve } = await Instantiate("main.wasm")
@@ -38,7 +41,7 @@ const main = async () => {
     store.dispatch(WasmLoaded(exports))
     store.dispatch(PageLoaded(randomPresets))
   })()
-  const Lang = NewI18n(lang, true)
+  const Lang = NewI18n(en as any, true)
   const div = document.body.appendChild(document.createElement("div"))
   store.subscribe(() =>
     render(
