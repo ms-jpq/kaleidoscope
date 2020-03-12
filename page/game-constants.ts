@@ -1,6 +1,6 @@
 import { Asset } from "./domain_agnostic/assets"
 import { Colour, State } from "./redux/state"
-import { Range } from "./domain_agnostic/utils"
+import { range } from "nda/dist/isomorphic/list"
 
 export enum Polygon {
   triangle = 3,
@@ -29,7 +29,7 @@ export enum Speed {
   ludicrous,
 }
 
-export const Speeds: Speed[] = Range(Speed.slowest, Speed.ludicrous)
+export const Speeds: Speed[] = range(Speed.slowest, Speed.ludicrous)
 
 export const Gears: Record<Speed, { dots: number; fps: number }> = {
   [Speed.slowest]: { dots: 1, fps: 2 },

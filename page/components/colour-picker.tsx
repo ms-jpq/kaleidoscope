@@ -4,10 +4,11 @@ import bs from "bootstrap/dist/css/bootstrap.min.css"
 import Huebee from "huebee"
 import ps from "./page.css"
 import React from "react"
-import { $ as $_ } from "../domain_agnostic/utils"
-import { Classes as _ } from "../domain_agnostic/utils"
+import { $ as $_ } from "nda/dist/browser/dom"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 import { Colour } from "../redux/state"
 import "huebee/dist/huebee.min.css"
+
 
 const Hex = {
   "0": 0,

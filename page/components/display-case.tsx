@@ -1,7 +1,7 @@
 import bs from "bootstrap/dist/css/bootstrap.min.css"
 import ps from "./page.css"
 import React from "react"
-import { Classes as _ } from "../domain_agnostic/utils"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
 import { NewPreset } from "../redux/thunk-actions"
 import { Preset } from "../game-constants"

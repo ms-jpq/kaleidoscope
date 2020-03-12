@@ -1,6 +1,6 @@
 import bs from "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
-import { Classes as _ } from "../domain_agnostic/utils"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 
 export const Loaders = () => {
   return (

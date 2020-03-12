@@ -1,5 +1,5 @@
 import { GET } from "./xhr"
-import { Unpacked } from "./types"
+import { PromiseType } from "nda/dist/typings"
 
 export const NewI18n = async (lang: string, warn: boolean) => {
   const store = await GET<Record<string, { message: string }>>(`${lang}.json`)()
@@ -12,4 +12,4 @@ export const NewI18n = async (lang: string, warn: boolean) => {
   }
 }
 
-export type I18n = Unpacked<Unpacked<typeof NewI18n>>
+export type I18n = PromiseType<ReturnType<typeof NewI18n>>

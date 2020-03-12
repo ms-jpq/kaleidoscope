@@ -3,7 +3,6 @@ export const NewRecorder = (
   opts: MediaRecorderOptions,
   callback: (_: Blob) => void,
 ) => {
-  console.log(stream)
   let chunks: Blob[] = []
   const { mimeType } = opts
   const recorder = new MediaRecorder(stream, opts)

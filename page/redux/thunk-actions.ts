@@ -1,16 +1,13 @@
 import { Action, State } from "./state"
-import {
-  Animate,
-  Download,
-  Random,
-  Timer,
-  Wait,
-} from "../domain_agnostic/utils"
+import { Animate } from "../domain_agnostic/utils"
+import { choice } from "nda/dist/isomorphic/rand"
 import { Dispatch, Fetch, ThunkAction } from "../domain_agnostic/simple-redux"
+import { download } from "nda/dist/browser/dom"
 import { DrawingOptions, GoExports } from "../interlope"
 import { Gears, Polygon, Preset, Restriction, Speed } from "../game-constants"
 import { NewRecorder } from "../domain_agnostic/recorder"
 import { NewRenderer } from "../canvas/canvas"
+import { sleep, timer } from "nda/dist/isomorphic/prelude"
 
 type A = Action | ThunkAction<State, Action>
 type TA = ThunkAction<State, Action | A>
@@ -84,7 +81,7 @@ const redrawLastFrame = (fetch: Fetch<State>) => {
 
 const run = (fetch: Fetch<State>, dispatch: Dispatch<Action | any>) =>
   Animate(async (fps) => {
-    const timer = Timer()
+    const t = timer()
     const {
       game: {
         speed,
@@ -110,7 +107,7 @@ const run = (fetch: Fetch<State>, dispatch: Dispatch<Action | any>) =>
     draw(res.value, colours, status !== "before-start", drawTracers === "on")
     newStatistics(fps, dots)(fetch, dispatch)
     if (fpsTarget < 60) {
-      await Wait(approxWait - timer())
+      await sleep(approxWait - t())
     }
   })
 
@@ -257,7 +254,7 @@ export const NewPreset = (preset: Preset): TA => (fetch, dispatch) => {
 }
 
 export const PageLoaded = (presets: Preset[]): TA => (fetch, dispatch) => {
-  const preset = presets[Random(0, presets.length - 1)]
+  const preset = choice(presets)!
   const {
     game: { speed },
   } = fetch()
@@ -273,10 +270,7 @@ export const NewDownload = (): TA => async (fetch, dispatch) => {
     return
   }
   const { screenshot } = canvas.render
-  Download({
-    name: `${String(Math.random()).replace(".", "")}.png`,
-    uri: screenshot(),
-  })
+  download(`${String(Math.random()).replace(".", "")}.png`, screenshot())
 }
 
 export const NewRecording = (): TA => (fetch, dispatch) => {
@@ -302,10 +296,7 @@ export const NewRecording = (): TA => (fetch, dispatch) => {
         { mimeType: "video/webm" },
         (blob) => {
           const uri = URL.createObjectURL(blob)
-          Download({
-            name: `${String(Math.random()).replace(".", "")}.webm`,
-            uri,
-          })
+          download(`${String(Math.random()).replace(".", "")}.webm`, uri)
           setTimeout(() => URL.revokeObjectURL(uri))
         },
       )

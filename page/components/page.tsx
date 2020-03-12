@@ -5,28 +5,30 @@ import React from "react"
 import ResizeObserver from "resize-observer-polyfill"
 import rs from "jquery-ui/themes/base/resizable.css"
 import { Accordion } from "./accordion"
-import { Between, Classes as _, Throttle } from "../domain_agnostic/utils"
+import { Between } from "../domain_agnostic/utils"
 import { CanvasControl } from "./canvas-controls"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 import { DisplayCase } from "./display-case"
 import { GameControl } from "./game-controls"
 import { GameInfo } from "./game-info"
 import { I18n } from "../domain_agnostic/i18n"
 import { InfoModal } from "./info-modal"
 import { Loaders } from "./loaders"
+import { OutdatedBrowser } from "./dated-browser"
+import { Preset } from "../game-constants"
+import { SaveMedia } from "./save-media"
+import { StatisticsTracker } from "./statistics-tracker"
+import { Store } from "../redux/state"
+import { throttle } from "nda/dist/isomorphic/decorator"
+import "jquery-ui/ui/widgets/resizable"
+import "@fortawesome/fontawesome-free/js/all"
+import "bootstrap"
 import {
   NewCanvas,
   NewFrameSize,
   NewVertex,
   ResetGame,
 } from "../redux/thunk-actions"
-import { OutdatedBrowser } from "./dated-browser"
-import { Preset } from "../game-constants"
-import { SaveMedia } from "./save-media"
-import { StatisticsTracker } from "./statistics-tracker"
-import { Store } from "../redux/state"
-import "jquery-ui/ui/widgets/resizable"
-import "@fortawesome/fontawesome-free/js/all"
-import "bootstrap"
 
 type Props = {
   Lang: I18n
@@ -88,7 +90,7 @@ export const Page = (props: Props) => {
     const { clientWidth } = document.documentElement
 
     new ResizeObserver(
-      Throttle(
+      throttle(
         resizeThrottle,
         ([
           {
@@ -127,7 +129,7 @@ export const Page = (props: Props) => {
         size.height = Math.min(size.height, clientHeight)
       })
 
-    globalThis.onresize = Throttle(
+    globalThis.onresize = throttle(
       resizeThrottle,
       ((prevWidth) => () => {
         const { clientWidth } = document.documentElement

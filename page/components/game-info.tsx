@@ -3,7 +3,7 @@ import ps from "./page.css"
 import React from "react"
 import { AccordionSection } from "./accordion"
 import { Asset } from "../domain_agnostic/assets"
-import { Classes as _ } from "../domain_agnostic/utils"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
 
 type Props = {

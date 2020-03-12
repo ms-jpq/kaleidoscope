@@ -1,7 +1,7 @@
 import bs from "bootstrap/dist/css/bootstrap.min.css"
 import ps from "./page.css"
 import React from "react"
-import { Classes as _ } from "../domain_agnostic/utils"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 
 export const Accordion = (props: { children: React.ReactNode }) => (
   <div className={bs.accordion}>{props.children}</div>

@@ -2,6 +2,8 @@
 node_modules
 package-lock.json
 out
+dist
+temp
 *.css.d.ts
 wasm_go.js
 npm-debug.log

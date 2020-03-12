@@ -10,7 +10,7 @@ import {
   Speed,
   Speeds,
 } from "../game-constants"
-import { Classes as _ } from "../domain_agnostic/utils"
+import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
 import {
   NewCompression,

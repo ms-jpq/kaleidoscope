@@ -1,12 +1,13 @@
 import React from "react"
 import { DEFAULT_STATE, PRESETS } from "./game-constants"
-import { DOMReady, Randomize } from "./domain_agnostic/utils"
 import { GoExports, Instantiate } from "./interlope"
 import { NewI18n } from "./domain_agnostic/i18n"
 import { NewStateStore } from "./redux/state"
 import { Page } from "./components/page"
 import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
+import { ready } from "nda/dist/browser/dom"
 import { render } from "react-dom"
+import { shuffle } from "nda/dist/isomorphic/rand"
 
 const go = async () => {
   const { run, retrieve } = await Instantiate("main.wasm")
@@ -30,14 +31,14 @@ const go = async () => {
 }
 
 const main = async () => {
-  const randomPresets = Randomize(PRESETS)
+  const randomPresets = shuffle(PRESETS)
   const store = NewStateStore(DEFAULT_STATE)
   ;(async () => {
     const exports = await go()
     store.dispatch(WasmLoaded(exports))
     store.dispatch(PageLoaded(randomPresets))
   })()
-  const [Lang] = await Promise.all([NewI18n("en", true), DOMReady()])
+  const [Lang] = await Promise.all([NewI18n("en", true), ready()])
   const div = document.body.appendChild(document.createElement("div"))
   store.subscribe(() =>
     render(
