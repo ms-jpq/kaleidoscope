@@ -26,7 +26,9 @@ export const OutdatedBrowser = (props: Props) => {
       <div className={_(bs.modalDialog, bs.modalDialogCentered)}>
         <div className={bs.modalContent}>
           <div className={_(bs.modalHeader, bs.dFlex, bs.flexColumn)}>
-            <h5 className={bs.modalTitle}>{Lang("outdated browser modal title")}</h5>
+            <h5 className={bs.modalTitle}>
+              {Lang("outdated browser modal title")}
+            </h5>
             <h6>{Lang("require webgl2 wasm")}</h6>
           </div>
           <div className={bs.modalBody}>

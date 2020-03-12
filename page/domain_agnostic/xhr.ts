@@ -1,7 +1,10 @@
-const XHR = (req: "GET" | "PUT" | "POST" | "DELETE") => <T>(url: string) => async (
-  body?: Record<string, number | string>,
-) => {
-  const res = await fetch(url, { method: req, body: body && JSON.stringify(body) })
+const XHR = (req: "GET" | "PUT" | "POST" | "DELETE") => <T>(
+  url: string,
+) => async (body?: Record<string, number | string>) => {
+  const res = await fetch(url, {
+    method: req,
+    body: body && JSON.stringify(body),
+  })
   if (res.ok) {
     return res.json() as Promise<T>
   } else {

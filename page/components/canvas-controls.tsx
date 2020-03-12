@@ -37,8 +37,9 @@ export const CanvasControl = (props: Props) => {
   const newTracer: NewColour = (colour) =>
     dispatch({ type: "colour-update", location: "tracer", colour })
 
-  const newDrawTracers: InputResponder<HTMLInputElement> = ({ currentTarget: { checked } }) =>
-    dispatch(NewDrawTracer(checked ? "on" : "off"))
+  const newDrawTracers: InputResponder<HTMLInputElement> = ({
+    currentTarget: { checked },
+  }) => dispatch(NewDrawTracer(checked ? "on" : "off"))
 
   return (
     <AccordionSection id="canvas-control" defaultShow={true}>
@@ -48,7 +49,9 @@ export const CanvasControl = (props: Props) => {
       <form>
         <div className={bs.formRow}>
           <div className={bs.col}>
-            <div className={_(bs.customControl, bs.customSwitch, bs.formControl)}>
+            <div
+              className={_(bs.customControl, bs.customSwitch, bs.formControl)}
+            >
               <input
                 id="tracer-enable-input"
                 className={bs.customControlInput}
@@ -58,7 +61,12 @@ export const CanvasControl = (props: Props) => {
               />
               <label
                 htmlFor="tracer-enable-input"
-                className={_(bs.customControlLabel, bs.ml2, bs.textNowrap, ps.clickable)}
+                className={_(
+                  bs.customControlLabel,
+                  bs.ml2,
+                  bs.textNowrap,
+                  ps.clickable,
+                )}
               >
                 {Lang("tracer enable")}
               </label>

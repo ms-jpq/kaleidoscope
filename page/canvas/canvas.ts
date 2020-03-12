@@ -3,7 +3,11 @@ import offscreenShader from "../../shaders/offscreen-shader.vsh"
 import onscreenShader from "../../shaders/onscreen-shader.vsh"
 import { Colours } from "../redux/state"
 import { DrawingInstructions, ReleaseDrawingInstructions } from "../interlope"
-import { NewColourRenderbuffer, UseArrayBuffer, ColourRenderBuffer } from "./buffers"
+import {
+  NewColourRenderbuffer,
+  UseArrayBuffer,
+  ColourRenderBuffer,
+} from "./buffers"
 import { NewProgram } from "./program"
 import { Viewport } from "./types"
 
@@ -11,7 +15,8 @@ const vec2Size = 2
 const vec3Size = 3
 
 const screensize = (): Viewport => {
-  const size = Math.floor(Math.min(screen.width, screen.height)) * devicePixelRatio
+  const size =
+    Math.floor(Math.min(screen.width, screen.height)) * devicePixelRatio
   return {
     width: size,
     height: size,
@@ -72,7 +77,11 @@ const initiateB = (gl: WebGL2RenderingContext) => {
   const colour = program.getUniformLocation("colour")
   const vertex = program.getAndEnableAttributeLocation("vertex")
 
-  const drawTracers = (vertextracers: Float32Array, dottracers: Float32Array, colours: Colours) => {
+  const drawTracers = (
+    vertextracers: Float32Array,
+    dottracers: Float32Array,
+    colours: Colours,
+  ) => {
     program.use()
     gl.uniform4f(colour, ...colours.tracer)
     UseArrayBuffer(gl, vertextracers, () => {
@@ -93,7 +102,11 @@ export const NewRenderer = (gl: WebGL2RenderingContext) => {
 
   const resize = (): [Viewport, ColourRenderBuffer, ColourRenderBuffer] => {
     const size = canvasSize()
-    return [size, NewColourRenderbuffer(gl, size), NewColourRenderbuffer(gl, size)]
+    return [
+      size,
+      NewColourRenderbuffer(gl, size),
+      NewColourRenderbuffer(gl, size),
+    ]
   }
 
   let [rboSize, rboA, rboB] = resize()
@@ -127,12 +140,15 @@ export const NewRenderer = (gl: WebGL2RenderingContext) => {
     draw && programA.drawDots(dots, count, colours)
     rboA.blit(rboB.fbo(), rboB.viewport())
     rboB.bind("draw")
-    draw && drawTracers && programB.drawTracers(vertextracers, dottracers, colours)
+    draw &&
+      drawTracers &&
+      programB.drawTracers(vertextracers, dottracers, colours)
     rboB.blitToScreen()
     ReleaseDrawingInstructions(instructions)
   }
 
-  const redraw = (drawTracers: boolean) => (drawTracers ? rboB : rboA).blitToScreen()
+  const redraw = (drawTracers: boolean) =>
+    (drawTracers ? rboB : rboA).blitToScreen()
 
   const screenshot = () => {
     const pixels = rboA.read()

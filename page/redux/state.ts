@@ -12,7 +12,12 @@ import {
 } from "../domain_agnostic/simple-redux"
 
 export type Colour = [number, number, number, number]
-export type ColourLocation = "colourA" | "colourB" | "tracer" | "polygon" | "background"
+export type ColourLocation =
+  | "colourA"
+  | "colourB"
+  | "tracer"
+  | "polygon"
+  | "background"
 export type Colours = Record<ColourLocation, Colour>
 
 export type State = {
@@ -31,14 +36,22 @@ export type State = {
     colours: Colours
   }
   page: {
-    canvas: { status: "loading" } | { status: "loaded"; render: Render } | { status: "failed" }
-    wasm: { status: "loading" } | { status: "loaded"; exports: GoExports } | { status: "failed" }
+    canvas:
+      | { status: "loading" }
+      | { status: "loaded"; render: Render }
+      | { status: "failed" }
+    wasm:
+      | { status: "loading" }
+      | { status: "loaded"; exports: GoExports }
+      | { status: "failed" }
   }
   statistics: {
     fps: number
     dotsDrawn: number
   }
-  recording: { status: "not-recording" } | { status: "recording"; recorder: Recorder }
+  recording:
+    | { status: "not-recording" }
+    | { status: "recording"; recorder: Recorder }
 }
 
 type GameAction =
@@ -112,7 +125,12 @@ type RecordingAction =
       type: "end-recording"
     }
 
-export type Action = GameAction | CanvasAction | PageAction | StatisticsAction | RecordingAction
+export type Action =
+  | GameAction
+  | CanvasAction
+  | PageAction
+  | StatisticsAction
+  | RecordingAction
 
 const gameReducer: Reducer<State["game"], GameAction> = (state, action) => {
   const newState = { ...state }
@@ -142,7 +160,10 @@ const gameReducer: Reducer<State["game"], GameAction> = (state, action) => {
   return newState
 }
 
-const canvasReducer: Reducer<State["canvas"], CanvasAction> = (state, action) => {
+const canvasReducer: Reducer<State["canvas"], CanvasAction> = (
+  state,
+  action,
+) => {
   const newState = { ...state }
   switch (action.type) {
     case "colour-update":
@@ -170,7 +191,10 @@ const pageReducer: Reducer<State["page"], PageAction> = (state, action) => {
   return newState
 }
 
-const statisticsReducer: Reducer<State["statistics"], Action> = (state, action) => {
+const statisticsReducer: Reducer<State["statistics"], Action> = (
+  state,
+  action,
+) => {
   const newState = { ...state }
   switch (action.type) {
     case "end-game":
@@ -181,7 +205,10 @@ const statisticsReducer: Reducer<State["statistics"], Action> = (state, action) 
   return newState
 }
 
-const recordingReducer: Reducer<State["recording"], RecordingAction> = (state, action) => {
+const recordingReducer: Reducer<State["recording"], RecordingAction> = (
+  state,
+  action,
+) => {
   switch (action.type) {
     case "start-recording":
       return { status: "recording", recorder: action.recorder }
@@ -202,7 +229,8 @@ const reducer: Reducer<State, Action> = (state, action) => {
         statistics: { dotsDrawn: oldDots },
       } = state
       const fps = status !== "running" ? 0 : action.fps
-      const dotsDrawn = status === "before-start" ? 0 : oldDots + action.dotsDrawn
+      const dotsDrawn =
+        status === "before-start" ? 0 : oldDots + action.dotsDrawn
       newState.statistics = { fps, dotsDrawn }
       break
   }

@@ -30,10 +30,9 @@ const Hex = {
 
 type HexType = typeof Hex
 
-const RevHex: Record<HexType[keyof HexType], keyof HexType> = Object.entries(Hex).reduce(
-  (acc, [k, v]) => ({ ...acc, [v]: k }),
-  {},
-)
+const RevHex: Record<HexType[keyof HexType], keyof HexType> = Object.entries(
+  Hex,
+).reduce((acc, [k, v]) => ({ ...acc, [v]: k }), {})
 
 type Props = {
   id: string
@@ -96,7 +95,10 @@ export const ColourInputGroup = (props: PProps & Props) => {
   return (
     <div className={_(bs.inputGroup, bs.flexNowrap)}>
       <div className={_(bs.inputGroupPrepend, bs.flexGrow1)}>
-        <label htmlFor={id} className={_(bs.inputGroupText, bs.flexGrow1, ps.clickable)}>
+        <label
+          htmlFor={id}
+          className={_(bs.inputGroupText, bs.flexGrow1, ps.clickable)}
+        >
           {label}
         </label>
       </div>

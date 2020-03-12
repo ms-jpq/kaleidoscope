@@ -25,7 +25,10 @@ export const AccordionSection = (props: Props) => {
       >
         {head}
       </div>
-      <div id={id} className={_(bs.cardBody, bs.collapse, { show: defaultShow })}>
+      <div
+        id={id}
+        className={_(bs.cardBody, bs.collapse, { show: defaultShow })}
+      >
         {body}
       </div>
     </section>

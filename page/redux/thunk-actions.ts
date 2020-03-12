@@ -1,5 +1,11 @@
 import { Action, State } from "./state"
-import { Animate, Download, Random, Timer, Wait } from "../domain_agnostic/utils"
+import {
+  Animate,
+  Download,
+  Random,
+  Timer,
+  Wait,
+} from "../domain_agnostic/utils"
 import { Dispatch, Fetch, ThunkAction } from "../domain_agnostic/simple-redux"
 import { DrawingOptions, GoExports } from "../interlope"
 import { Gears, Polygon, Preset, Restriction, Speed } from "../game-constants"
@@ -24,7 +30,8 @@ const newStatistics = ((ms) => {
   let fpsRecord: number[] = []
   let dotsDrawn = 0
   const signal = (dispatch: Dispatch<Action>) => {
-    const avg = fpsRecord.reduce((acc, curr) => acc + curr, 0) / fpsRecord.length
+    const avg =
+      fpsRecord.reduce((acc, curr) => acc + curr, 0) / fpsRecord.length
     dispatch({ type: "statistics-update", fps: avg, dotsDrawn })
     fpsRecord = []
     dotsDrawn = 0
@@ -107,7 +114,10 @@ const run = (fetch: Fetch<State>, dispatch: Dispatch<Action | any>) =>
     }
   })
 
-export const NewCanvas = (canvas: HTMLCanvasElement): TA => (fetch, dispatch) => {
+export const NewCanvas = (canvas: HTMLCanvasElement): TA => (
+  fetch,
+  dispatch,
+) => {
   const ctx = canvas.getContext("webgl2", {
     antialias: false,
     stencil: false,
@@ -222,7 +232,8 @@ export const NewDrawTracer = (value: "on" | "off"): TA => (fetch, dispatch) => {
   redrawLastFrame(fetch)
 }
 
-export const NewFrameSize = (): TA => (fetch, dispatch) => redrawLastFrame(fetch)
+export const NewFrameSize = (): TA => (fetch, dispatch) =>
+  redrawLastFrame(fetch)
 
 export const ResetGame = (): TA => (fetch, dispatch) => {
   const {
@@ -262,7 +273,10 @@ export const NewDownload = (): TA => async (fetch, dispatch) => {
     return
   }
   const { screenshot } = canvas.render
-  Download({ name: `${String(Math.random()).replace(".", "")}.png`, uri: screenshot() })
+  Download({
+    name: `${String(Math.random()).replace(".", "")}.png`,
+    uri: screenshot(),
+  })
 }
 
 export const NewRecording = (): TA => (fetch, dispatch) => {
@@ -283,11 +297,18 @@ export const NewRecording = (): TA => (fetch, dispatch) => {
       return dispatch({ type: "end-recording" })
     }
     case "not-recording": {
-      const recorder = NewRecorder(stream(), { mimeType: "video/webm" }, (blob) => {
-        const uri = URL.createObjectURL(blob)
-        Download({ name: `${String(Math.random()).replace(".", "")}.webm`, uri })
-        setTimeout(() => URL.revokeObjectURL(uri))
-      })
+      const recorder = NewRecorder(
+        stream(),
+        { mimeType: "video/webm" },
+        (blob) => {
+          const uri = URL.createObjectURL(blob)
+          Download({
+            name: `${String(Math.random()).replace(".", "")}.webm`,
+            uri,
+          })
+          setTimeout(() => URL.revokeObjectURL(uri))
+        },
+      )
       recorder.start()
       return dispatch({ type: "start-recording", recorder })
     }

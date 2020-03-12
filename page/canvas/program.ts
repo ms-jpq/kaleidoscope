@@ -8,7 +8,9 @@ const attachShader = (
   program: WebGLProgram,
   { type, source }: Shader,
 ) => {
-  const shader = gl.createShader(type === "vertex" ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER)!
+  const shader = gl.createShader(
+    type === "vertex" ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER,
+  )!
   gl.shaderSource(shader, source)
   gl.compileShader(shader)
   console.assert(gl.getShaderInfoLog(shader) === "")
@@ -29,7 +31,8 @@ export const NewProgram = (
   console.assert(gl.getError() === gl.NO_ERROR)
 
   const use = () => gl.useProgram(program)
-  const getUniformLocation = (name: string) => gl.getUniformLocation(program, name)!
+  const getUniformLocation = (name: string) =>
+    gl.getUniformLocation(program, name)!
   const getAndEnableAttributeLocation = (name: string) => {
     const location = gl.getAttribLocation(program, name)
     gl.enableVertexAttribArray(location)

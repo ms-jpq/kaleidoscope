@@ -12,7 +12,12 @@ import {
 } from "../game-constants"
 import { Classes as _ } from "../domain_agnostic/utils"
 import { I18n } from "../domain_agnostic/i18n"
-import { NewCompression, NewPolygon, NewRestriction, NewSpeed } from "../redux/thunk-actions"
+import {
+  NewCompression,
+  NewPolygon,
+  NewRestriction,
+  NewSpeed,
+} from "../redux/thunk-actions"
 import { Store } from "../redux/state"
 
 type Props = {
@@ -31,17 +36,21 @@ export const GameControl = (props: Props) => {
     game: { polygon, jumpFunction, compression, speed },
   } = fetch()
 
-  const newPolygon: InputResponder<HTMLSelectElement> = ({ currentTarget: { value } }) =>
-    dispatch(NewPolygon(Number(value) as Polygon))
+  const newPolygon: InputResponder<HTMLSelectElement> = ({
+    currentTarget: { value },
+  }) => dispatch(NewPolygon(Number(value) as Polygon))
 
-  const newJumpFn: InputResponder<HTMLSelectElement> = ({ currentTarget: { value } }) =>
-    dispatch(NewRestriction(Number(value)))
+  const newJumpFn: InputResponder<HTMLSelectElement> = ({
+    currentTarget: { value },
+  }) => dispatch(NewRestriction(Number(value)))
 
-  const newCompression: InputResponder<HTMLInputElement> = ({ currentTarget: { value } }) =>
-    dispatch(NewCompression(Number(value)))
+  const newCompression: InputResponder<HTMLInputElement> = ({
+    currentTarget: { value },
+  }) => dispatch(NewCompression(Number(value)))
 
-  const newSpeed: InputResponder<HTMLSelectElement> = ({ currentTarget: { value } }) =>
-    dispatch(NewSpeed(Number(value)))
+  const newSpeed: InputResponder<HTMLSelectElement> = ({
+    currentTarget: { value },
+  }) => dispatch(NewSpeed(Number(value)))
 
   return (
     <AccordionSection id="game-control" defaultShow={true}>
@@ -93,7 +102,12 @@ export const GameControl = (props: Props) => {
           />
         </FormGroup>
         <FormGroup htmlFor="speed-input" label={Lang("speed")}>
-          <select id="speed-input" className={bs.formControl} value={speed} onChange={newSpeed}>
+          <select
+            id="speed-input"
+            className={bs.formControl}
+            value={speed}
+            onChange={newSpeed}
+          >
             {Speeds.map((s) => (
               <option key={s} value={s}>
                 {Lang(Speed[s])}
@@ -115,7 +129,10 @@ const FormGroup = (props: PProps) => {
   const { label, htmlFor, children } = props
   return (
     <div className={bs.formGroup}>
-      <label htmlFor={htmlFor} className={_(bs.fontWeightBold, ps.gameControlLabel)}>
+      <label
+        htmlFor={htmlFor}
+        className={_(bs.fontWeightBold, ps.gameControlLabel)}
+      >
         {label}
       </label>
       {children}

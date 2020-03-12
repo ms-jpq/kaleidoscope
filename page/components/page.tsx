@@ -13,7 +13,12 @@ import { GameInfo } from "./game-info"
 import { I18n } from "../domain_agnostic/i18n"
 import { InfoModal } from "./info-modal"
 import { Loaders } from "./loaders"
-import { NewCanvas, NewFrameSize, NewVertex, ResetGame } from "../redux/thunk-actions"
+import {
+  NewCanvas,
+  NewFrameSize,
+  NewVertex,
+  ResetGame,
+} from "../redux/thunk-actions"
 import { OutdatedBrowser } from "./dated-browser"
 import { Preset } from "../game-constants"
 import { SaveMedia } from "./save-media"
@@ -83,11 +88,18 @@ export const Page = (props: Props) => {
     const { clientWidth } = document.documentElement
 
     new ResizeObserver(
-      Throttle(resizeThrottle, ([{ contentRect: { width, height } }]: ResizeObserverEntry[]) => {
-        canvas!.width = width * devicePixelRatio
-        canvas!.height = height * devicePixelRatio
-        dispatch(NewFrameSize())
-      }),
+      Throttle(
+        resizeThrottle,
+        ([
+          {
+            contentRect: { width, height },
+          },
+        ]: ResizeObserverEntry[]) => {
+          canvas!.width = width * devicePixelRatio
+          canvas!.height = height * devicePixelRatio
+          dispatch(NewFrameSize())
+        },
+      ),
     ).observe(canvas!)
 
     $(leftPanel!)
@@ -95,7 +107,10 @@ export const Page = (props: Props) => {
       .resizable({ handles: { e: splitterLeft } })
       .on("resize", (_, { size }) => {
         const { clientWidth, clientHeight } = document.documentElement
-        size.width = Between(clientWidth * minLeftPanel, clientWidth * maxLeftPanel)(size.width)
+        size.width = Between(
+          clientWidth * minLeftPanel,
+          clientWidth * maxLeftPanel,
+        )(size.width)
         size.height = Math.min(size.height, clientHeight)
       })
 
@@ -105,7 +120,10 @@ export const Page = (props: Props) => {
       .on("resize", (_, { size, position }) => {
         const { clientWidth, clientHeight } = document.documentElement
         position.left = 0
-        size.width = Between(clientWidth * minRightPanel, clientWidth * maxRightPanel)(size.width)
+        size.width = Between(
+          clientWidth * minRightPanel,
+          clientWidth * maxRightPanel,
+        )(size.width)
         size.height = Math.min(size.height, clientHeight)
       })
 
@@ -113,10 +131,14 @@ export const Page = (props: Props) => {
       resizeThrottle,
       ((prevWidth) => () => {
         const { clientWidth } = document.documentElement
-        const leftRatio = Between(minLeftPanel, maxLeftPanel)(leftPanel!.clientWidth / prevWidth)
-        const rightRatio = Between(minRightPanel, maxRightPanel)(
-          rightPanel!.clientWidth / prevWidth,
-        )
+        const leftRatio = Between(
+          minLeftPanel,
+          maxLeftPanel,
+        )(leftPanel!.clientWidth / prevWidth)
+        const rightRatio = Between(
+          minRightPanel,
+          maxRightPanel,
+        )(rightPanel!.clientWidth / prevWidth)
         leftPanel!.style.width = `${leftRatio * clientWidth}px`
         rightPanel!.style.width = `${rightRatio * clientWidth}px`
         prevWidth = clientWidth
@@ -148,7 +170,12 @@ export const Page = (props: Props) => {
         </div>
         <div
           ref={splitterLeftRef}
-          className={_(ps.splitter, bs.h100, rs.uiResizableHandle, rs.uiResizableE)}
+          className={_(
+            ps.splitter,
+            bs.h100,
+            rs.uiResizableHandle,
+            rs.uiResizableE,
+          )}
         />
         <main
           className={_(
@@ -165,7 +192,10 @@ export const Page = (props: Props) => {
           )}
         >
           <span id="reset-button" data-toggle="tooltip" title={Lang("reset")}>
-            <button className={_(bs.btn, bs.btnOutlineDanger)} onClick={onResetButton}>
+            <button
+              className={_(bs.btn, bs.btnOutlineDanger)}
+              onClick={onResetButton}
+            >
               <em>{Lang("reset")}</em>
             </button>
           </span>
@@ -187,19 +217,32 @@ export const Page = (props: Props) => {
             </button>
           </span>
           {wasm === "loading" ? <Loaders /> : undefined}
-          <div className={_(ps.canvasContainer, { [bs.dNone]: wasm === "loading" })}>
+          <div
+            className={_(ps.canvasContainer, {
+              [bs.dNone]: wasm === "loading",
+            })}
+          >
             <canvas ref={canvasRef} onMouseDown={onMouseDown} />
           </div>
         </main>
         <aside ref={rightPanelRef} className={_(bs.vh100, bs.dFlex)}>
           <div
             ref={splitterRightRef}
-            className={_(ps.splitter, bs.h100, rs.uiResizableHandle, rs.uiResizableW)}
+            className={_(
+              ps.splitter,
+              bs.h100,
+              rs.uiResizableHandle,
+              rs.uiResizableW,
+            )}
           />
           <DisplayCase Lang={Lang} store={store} presets={presets} />
         </aside>
       </div>
-      {canvas === "failed" || wasm === "failed" ? <OutdatedBrowser Lang={Lang} /> : undefined}
+      {canvas === "failed" || wasm === "failed" ? (
+        <OutdatedBrowser Lang={Lang} />
+      ) : (
+        undefined
+      )}
       <InfoModal ref={modalRef} Lang={Lang} id="info-modal" />
     </React.StrictMode>
   )

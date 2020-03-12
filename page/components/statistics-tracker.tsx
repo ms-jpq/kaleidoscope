@@ -22,7 +22,9 @@ export const StatisticsTracker = (props: Props) => {
       id="statistics-tracker"
       className={_(bs.dFlex, bs.flexColumn, bs.textRight, bs.textPrimary)}
     >
-      <output className={bs.textTruncate}>{fps === 0 ? "" : Lang("fps %@", fps.toFixed(1))}</output>
+      <output className={bs.textTruncate}>
+        {fps === 0 ? "" : Lang("fps %@", fps.toFixed(1))}
+      </output>
       <output className={bs.textTruncate}>
         {dotsDrawn === 0 ? "" : Lang("dots drawn %@", dotsDrawn)}
       </output>

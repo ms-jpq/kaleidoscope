@@ -23,11 +23,19 @@ export const NewFramebuffer = (gl: WebGL2RenderingContext) => {
 
 export type FrameBuffer = ReturnType<typeof NewFramebuffer>
 
-export const NewRenderbuffer = (gl: WebGL2RenderingContext, { width, height }: Viewport) => {
+export const NewRenderbuffer = (
+  gl: WebGL2RenderingContext,
+  { width, height }: Viewport,
+) => {
   const renderbuffer = gl.createRenderbuffer()!
   gl.bindRenderbuffer(gl.RENDERBUFFER, renderbuffer)
   gl.renderbufferStorage(gl.RENDERBUFFER, gl.RGB5_A1, width, height)
-  gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.RENDERBUFFER, renderbuffer)
+  gl.framebufferRenderbuffer(
+    gl.FRAMEBUFFER,
+    gl.COLOR_ATTACHMENT0,
+    gl.RENDERBUFFER,
+    renderbuffer,
+  )
   console.assert(gl.isRenderbuffer(renderbuffer))
   console.assert(gl.getError() === gl.NO_ERROR)
   const bind = () => gl.bindRenderbuffer(gl.RENDERBUFFER, renderbuffer)
@@ -37,7 +45,10 @@ export const NewRenderbuffer = (gl: WebGL2RenderingContext, { width, height }: V
 
 export type RenderBuffer = ReturnType<typeof NewRenderbuffer>
 
-export const NewColourRenderbuffer = (gl: WebGL2RenderingContext, { width, height }: Viewport) => {
+export const NewColourRenderbuffer = (
+  gl: WebGL2RenderingContext,
+  { width, height }: Viewport,
+) => {
   const framebuffer = NewFramebuffer(gl)
   const renderbuffer = NewRenderbuffer(gl, { width, height })
   console.assert(gl.getError() === gl.NO_ERROR)
@@ -47,10 +58,24 @@ export const NewColourRenderbuffer = (gl: WebGL2RenderingContext, { width, heigh
     gl.viewport(0, 0, width, height)
     framebuffer.bind(target)
   }
-  const blit = (dest: WebGLFramebuffer | null, { width: w, height: h }: Viewport) => {
+  const blit = (
+    dest: WebGLFramebuffer | null,
+    { width: w, height: h }: Viewport,
+  ) => {
     bind("read")
     gl.bindFramebuffer(gl.DRAW_FRAMEBUFFER, dest)
-    gl.blitFramebuffer(0, 0, width, height, 0, 0, w, h, gl.COLOR_BUFFER_BIT, gl.NEAREST)
+    gl.blitFramebuffer(
+      0,
+      0,
+      width,
+      height,
+      0,
+      0,
+      w,
+      h,
+      gl.COLOR_BUFFER_BIT,
+      gl.NEAREST,
+    )
   }
   const blitToScreen = () => blit(null, CanvasViewport(gl))
   const read = () => {

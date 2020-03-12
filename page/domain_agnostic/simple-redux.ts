@@ -12,7 +12,9 @@ export const NewStore = <S, A>(
   let subscribers: (() => void)[] = []
   const subscribe = (sub: () => void) => {
     subscribers = [...subscribers, sub]
-    return () => ((subscribers = subscribers.filter((s) => s !== sub)), undefined)
+    return () => (
+      (subscribers = subscribers.filter((s) => s !== sub)), undefined
+    )
   }
   const fetch: Fetch<S> = () => _state
   const dispatch: Dispatch<A> = middleware(fetch, (action) => {
@@ -51,10 +53,16 @@ export const NewThunkMiddleware = <E>(props: E) => <S, A>(
   dispatch: Dispatch<A>,
 ): Dispatch<A> => (action) =>
   typeof action === "function"
-    ? (action as ThunkAction<S & E, A>)(() => ({ ...fetch(), ...props }), dispatch)
+    ? (action as ThunkAction<S & E, A>)(
+        () => ({ ...fetch(), ...props }),
+        dispatch,
+      )
     : dispatch(action)
 
-export const NewLoggerMiddleware = (...logging: ("action" | "state")[]) => <S, A>(
+export const NewLoggerMiddleware = (...logging: ("action" | "state")[]) => <
+  S,
+  A
+>(
   fetch: Fetch<S>,
   dispatch: Dispatch<A>,
 ): Dispatch<A> => (action) => {

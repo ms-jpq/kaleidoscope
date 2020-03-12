@@ -15,7 +15,9 @@ export enum Polygon {
   dodecagon = 12,
 }
 
-export const Polygons: Polygon[] = Object.values(Polygon).filter((v) => typeof v === "number")
+export const Polygons: Polygon[] = Object.values(Polygon).filter(
+  (v) => typeof v === "number",
+) as any
 
 export enum Speed {
   slowest,
@@ -57,7 +59,12 @@ export enum Restriction {
 }
 
 export const AllowableRestrictions: Record<Polygon, Restriction[]> = {
-  "3": [Restriction.none, Restriction.force_CW, Restriction.noSameDir, Restriction.last_noSameDir],
+  "3": [
+    Restriction.none,
+    Restriction.force_CW,
+    Restriction.noSameDir,
+    Restriction.last_noSameDir,
+  ],
   "4": [
     Restriction.none,
     Restriction.force_CW,

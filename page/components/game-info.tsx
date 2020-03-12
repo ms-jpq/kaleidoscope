@@ -21,12 +21,18 @@ export const GameInfo = (props: Props) => {
       <div className={_(bs.dFlex, bs.flexColumn)}>
         <ul className={_(bs.listGroup, bs.listGroupFlush)}>
           <li className={_(bs.listGroupItem, bs.px0)}>
-            <a target="_blank" rel="noopener" href="http://shiftingmind.com/chaosgame/">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="http://shiftingmind.com/chaosgame/"
+            >
               <div className={bs.media}>
                 <img className={_(bs.mr3, bs.w25)} src={Asset("hexa.gif")} />
                 <div className={bs.mediaBody}>
                   <h4 className={bs.mt0}>{Lang("how does it work")}</h4>
-                  <p className={ps.gameInfoLabel}>{Lang("how does it work desc")}</p>
+                  <p className={ps.gameInfoLabel}>
+                    {Lang("how does it work desc")}
+                  </p>
                 </div>
               </div>
             </a>
@@ -41,18 +47,29 @@ export const GameInfo = (props: Props) => {
                 <img className={_(bs.mr3, bs.w25)} src={Asset("wolfram.gif")} />
                 <div className={bs.mediaBody}>
                   <h4 className={bs.mt0}>{Lang("mathematica chaos")}</h4>
-                  <p className={ps.gameInfoLabel}>{Lang("mathematica chaos desc")}</p>
+                  <p className={ps.gameInfoLabel}>
+                    {Lang("mathematica chaos desc")}
+                  </p>
                 </div>
               </div>
             </a>
           </li>
           <li className={_(bs.listGroupItem, bs.px0)}>
-            <a target="_blank" rel="noopener" href="http://rectangleworld.com/blog/archives/561">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="http://rectangleworld.com/blog/archives/561"
+            >
               <div className={bs.media}>
-                <img className={_(bs.mr3, bs.w25)} src={Asset("six_fractals.jpg")} />
+                <img
+                  className={_(bs.mr3, bs.w25)}
+                  src={Asset("six_fractals.jpg")}
+                />
                 <div className={bs.mediaBody}>
                   <h4 className={bs.mt0}>{Lang("rectangle world")}</h4>
-                  <p className={ps.gameInfoLabel}>{Lang("rectangle world desc")}</p>
+                  <p className={ps.gameInfoLabel}>
+                    {Lang("rectangle world desc")}
+                  </p>
                 </div>
               </div>
             </a>

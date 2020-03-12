@@ -46,9 +46,16 @@ export const DisplayCase = (props: DCProps & Props) => {
       <section className={bs.w100}>
         <h4 className={bs.textCenter}>{Lang("presets")}</h4>
       </section>
-      <ul className={_(bs.listGroup, bs.listGroupFlush, bs.w100, bs.overflowAuto)}>
+      <ul
+        className={_(bs.listGroup, bs.listGroupFlush, bs.w100, bs.overflowAuto)}
+      >
         {presets.map((preset) => (
-          <Display Lang={Lang} key={preset.image} store={store} preset={preset} />
+          <Display
+            Lang={Lang}
+            key={preset.image}
+            store={store}
+            preset={preset}
+          />
         ))}
       </ul>
     </div>
