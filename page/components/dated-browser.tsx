@@ -2,7 +2,6 @@ import $ from "jquery"
 import bs from "bootstrap/dist/css/bootstrap.min.css"
 import ps from "./page.css"
 import React from "react"
-import { Asset } from "../domain_agnostic/assets"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
 
@@ -47,7 +46,7 @@ export const OutdatedBrowser = (props: Props) => {
                 >
                   <img
                     className={_(bs.imgFluid, bs.rounded, bs.w100, bs.hAuto)}
-                    src={Asset("firefox.png")}
+                    src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/firefox.png`}
                   />
                 </a>
                 <span className={bs.mx4} />
@@ -64,7 +63,7 @@ export const OutdatedBrowser = (props: Props) => {
                 >
                   <img
                     className={_(bs.imgFluid, bs.rounded, bs.w100, bs.hAuto)}
-                    src={Asset("chrome.png")}
+                    src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/chrome.png`}
                   />
                 </a>
               </div>

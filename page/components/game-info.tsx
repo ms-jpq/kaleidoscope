@@ -2,7 +2,6 @@ import bs from "bootstrap/dist/css/bootstrap.min.css"
 import ps from "./page.css"
 import React from "react"
 import { AccordionSection } from "./accordion"
-import { Asset } from "../domain_agnostic/assets"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
 
@@ -27,7 +26,10 @@ export const GameInfo = (props: Props) => {
               href="http://shiftingmind.com/chaosgame/"
             >
               <div className={bs.media}>
-                <img className={_(bs.mr3, bs.w25)} src={Asset("hexa.gif")} />
+                <img
+                  className={_(bs.mr3, bs.w25)}
+                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexa.gif`}
+                />
                 <div className={bs.mediaBody}>
                   <h4 className={bs.mt0}>{Lang("how does it work")}</h4>
                   <p className={ps.gameInfoLabel}>
@@ -44,7 +46,10 @@ export const GameInfo = (props: Props) => {
               href="https://community.wolfram.com/groups/-/m/t/1025180"
             >
               <div className={bs.media}>
-                <img className={_(bs.mr3, bs.w25)} src={Asset("wolfram.gif")} />
+                <img
+                  className={_(bs.mr3, bs.w25)}
+                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/wolfram.gif`}
+                />
                 <div className={bs.mediaBody}>
                   <h4 className={bs.mt0}>{Lang("mathematica chaos")}</h4>
                   <p className={ps.gameInfoLabel}>
@@ -63,7 +68,7 @@ export const GameInfo = (props: Props) => {
               <div className={bs.media}>
                 <img
                   className={_(bs.mr3, bs.w25)}
-                  src={Asset("six_fractals.jpg")}
+                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/six_fractals.jpg`}
                 />
                 <div className={bs.mediaBody}>
                   <h4 className={bs.mt0}>{Lang("rectangle world")}</h4>

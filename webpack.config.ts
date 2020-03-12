@@ -1,21 +1,19 @@
-import CompressionPlugin from "compression-webpack-plugin"
 import CopyWebpackPlugin from "copy-webpack-plugin"
 //@ts-ignore
 import DashboardPlugin from "webpack-dashboard/plugin"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
-import path from "path"
+import { resolve } from "nda/dist/node/path"
 import webpack from "webpack"
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 
 // const mode: webpack.Configuration["mode"] = "production"
-// const base = path.resolve(__dirname, "kaleidoscope-page")
+// const base = resolve(__dirname, "kaleidoscope-page")
 
 const mode: webpack.Configuration["mode"] = "development"
-const base = path.resolve(__dirname, "out")
+const base = resolve(__dirname, "out")
 
 const exclude = ["fs", "crypto", "utils", "os"]
-const entry = path.resolve(__dirname, "page/index.tsx")
+const entry = resolve(__dirname, "page/index.tsx")
 
 const config: webpack.Configuration = {
   mode,
@@ -79,10 +77,6 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new DashboardPlugin({}),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "static",
-    }),
-    new CompressionPlugin({}),
     new MiniCssExtractPlugin({}),
     new HtmlWebpackPlugin({
       cache: true,
@@ -94,10 +88,10 @@ const config: webpack.Configuration = {
       },
     }),
     new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "./_locales"), to: base },
+      { from: resolve(__dirname, "./_locales"), to: base },
     ]),
     new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "./out/main.wasm"), to: base },
+      { from: resolve(__dirname, "./out/main.wasm"), to: base },
     ]),
   ],
   optimization: {
@@ -114,7 +108,7 @@ const config: webpack.Configuration = {
     compress: true,
     writeToDisk: true,
     host: "0.0.0.0",
-    port: 80,
+    port: 8080,
   },
 }
 
