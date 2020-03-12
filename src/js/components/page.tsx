@@ -1,4 +1,3 @@
-import $ from "jquery"
 import React from "react"
 import { Accordion } from "./accordion"
 import { Between } from "../domain_agnostic/utils"

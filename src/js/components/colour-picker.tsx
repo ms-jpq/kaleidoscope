@@ -1,4 +1,3 @@
-import $ from "jquery"
 //@ts-ignore
 import Huebee from "huebee"
 import React from "react"

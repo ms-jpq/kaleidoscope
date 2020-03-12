@@ -9,7 +9,9 @@ import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
 import { render } from "react-dom"
 import { shuffle } from "nda/dist/isomorphic/rand"
 import "../wasm_go.js"
-import "jquery-ui-dist"
+import $ from "jquery"
+window["$"] = window["jQuery"] = $
+import "jquery-ui-dist/jquery-ui.js"
 import "bootstrap"
 
 const go = async () => {

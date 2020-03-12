@@ -1,4 +1,3 @@
-import $ from "jquery"
 import React from "react"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { I18n } from "../domain_agnostic/i18n"
