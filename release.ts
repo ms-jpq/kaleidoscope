@@ -11,7 +11,7 @@ const main = async () => {
   console.error(stderr)
   console.log(stdout)
   const prev = await readdir(1, artifacts_dir)
-  const prev__artifacts = filter((n) => !n.startsWith(".git"), [
+  const prev__artifacts = filter((n) => !n.endsWith(".git"), [
     ...prev.dirs,
     ...prev.files,
   ])
