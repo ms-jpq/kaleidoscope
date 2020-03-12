@@ -30,19 +30,26 @@
   },
   "description": "",
   "devDependencies": {
+    "@types/cors": "*",
+    "@types/express": "*",
     "@types/node": "*",
+    "@types/nodemon": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
+    "cors": "*",
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-prettier": "*",
+    "express": "*",
+    "nodemon": "*",
+    "parse-gitignore": "*",
     "prettier": "*",
     "ts-node": "*",
     "typescript": "*"
   },
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.html && ./build.sh",
+    "build": "rm -rf ./dist; parcel build src/index.html && ./build.sh",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\"",
     "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\""
   },

@@ -4,7 +4,6 @@ import React from "react"
 import { $ as $_ } from "nda/dist/browser/dom"
 import { cn as _ } from "nda/dist/isomorphic/dom"
 import { Colour } from "../redux/state"
-import "huebee/dist/huebee.min.css"
 
 const Hex = {
   "0": 0,
