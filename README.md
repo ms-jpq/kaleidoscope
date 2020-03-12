@@ -10,7 +10,7 @@ The Chaos Game is a [randomized fractal generation algorithm](https://en.wikiped
 
 ---
 
-## [Play here](https://ms-jpq.github.io/kaleidoscope-page/)
+## [Play here](https://ms-jpq.github.io/kaleidoscope-page/) (Desktop Firefox / Chrome)
 
 Its no [Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set), but you do have the ability to curate your own unique fractals by adjusting the following params during the live generation process.
 
