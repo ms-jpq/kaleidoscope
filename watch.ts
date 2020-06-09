@@ -12,10 +12,7 @@ const dist_dir = "./dist"
 const port = 8080
 
 const srv = (dir: string, port: number) => {
-  express()
-    .use(cors())
-    .use(express.static(dir, {}))
-    .listen(port)
+  express().use(cors()).use(express.static(dir, {})).listen(port)
   console.log(`-- Serving files at:  http://${hostname()}:${port}`)
 }
 
@@ -51,3 +48,4 @@ const main = async () => {
 }
 
 main()
+
