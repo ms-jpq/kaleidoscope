@@ -29,7 +29,7 @@ const main = async () => {
   const wasm_js = await slurp(js_root)
   await spit(wasm_js, "src/wasm_go.js")
   const env = { ...process.env, GOOS: "js", GOARCH: "wasm" }
-  run({
+  await run({
     cmd: "go",
     args: ["build", "-o", "dist/main.wasm", "src/wasm/main.go"],
     opts: { env },
