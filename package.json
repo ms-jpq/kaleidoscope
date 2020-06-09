@@ -51,7 +51,8 @@
   "scripts": {
     "build": "./build.ts",
     "lint": "eslint \"**/*.ts\" \"**/*.tsx\"",
-    "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\""
+    "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\"",
+    "release": "./release.ts"
   },
   "version": "1.0.0"
 }
