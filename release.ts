@@ -24,4 +24,3 @@ const artifacts_dir = "./artifacts"
 // }
 
 // main()
-

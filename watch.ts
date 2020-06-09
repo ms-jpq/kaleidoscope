@@ -41,4 +41,3 @@ const main = async () => {
 }
 
 main()
-

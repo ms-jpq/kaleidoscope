@@ -1,5 +1,5 @@
 import { Colour, State } from "./redux/state"
-import { range } from "nda/dist/isomorphic/list"
+import { range } from "nda/dist/isomorphic/iterator"
 
 export enum Polygon {
   triangle = 3,

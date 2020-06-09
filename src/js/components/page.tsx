@@ -234,9 +234,7 @@ export const Page = (props: Props) => {
       </div>
       {canvas === "failed" || wasm === "failed" ? (
         <OutdatedBrowser Lang={Lang} />
-      ) : (
-        undefined
-      )}
+      ) : undefined}
       <InfoModal ref={modalRef} Lang={Lang} id="info-modal" />
     </React.StrictMode>
   )
