@@ -34,9 +34,16 @@ const main = async () => {
     args: ["build", "-o", "dist/main.wasm", "src/wasm/main.go"],
     opts: { env },
   })
+  const out = (() => {
+    if (process.argv[2] === "--dev") {
+      return []
+    } else {
+      return ["--public-url", "/kaleidoscope-page"]
+    }
+  })()
   await run({
     cmd: "parcel",
-    args: ["build", "--public-url", "/kaleidoscope-page", "src/index.html"],
+    args: ["build", ...out, "src/index.html"],
   })
 }
 

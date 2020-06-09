@@ -4,7 +4,7 @@ import express from "express"
 import nodemon, { Settings } from "nodemon"
 //@ts-ignore
 import parse from "parse-gitignore"
-import { big_print } from "nda/dist/node/prelude"
+import { big_print } from "nda/dist/node/console"
 import { hostname } from "os"
 import { slurp } from "nda/dist/node/fs"
 
@@ -30,19 +30,12 @@ const main = async () => {
   const exts = ["json", "ts", "tsx", "scss", "go", "frag", "vert"]
   const git_ignore = await slurp(".gitignore")
   const ignore = parse(git_ignore)
-  const exec1 = "parcel build ./src/index.html"
-  const exec2 = "./build.sh"
+  const exec1 = "npm run build -- --dev"
   watch({
     ext: exts.join(),
     colours: true,
     ignore,
     exec: exec1,
-  })
-  watch({
-    ext: exts.join(),
-    colours: true,
-    ignore,
-    exec: exec2,
   })
   srv(dist_dir, port)
 }
