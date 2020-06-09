@@ -28,7 +28,7 @@ export enum Speed {
   ludicrous,
 }
 
-export const Speeds: Speed[] = range(Speed.slowest, Speed.ludicrous)
+export const Speeds: Speed[] = [...range(Speed.slowest, Speed.ludicrous)]
 
 export const Gears: Record<Speed, { dots: number; fps: number }> = {
   [Speed.slowest]: { dots: 1, fps: 2 },
@@ -398,3 +398,4 @@ export const DEFAULT_STATE: State = {
   },
   recording: { status: "not-recording" },
 }
+
