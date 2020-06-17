@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 
 import { rm, slurp, spit, mkdir } from "nda/dist/node/fs"
-import { join } from "nda/dist/node/path"
+import { join } from "path"
 import { call, run as run_c, SpawnArgs } from "nda/dist/node/sub_process"
 
 const dist_dir = "./dist"
