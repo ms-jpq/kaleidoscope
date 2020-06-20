@@ -2,7 +2,7 @@
 
 import { rm, slurp, spit, mkdir } from "nda/dist/node/fs"
 import { join } from "path"
-import { call, run as run_c, SpawnArgs } from "nda/dist/node/sub_process"
+import { call, pipe, SpawnArgs } from "nda/dist/node/sub_process"
 
 const dist_dir = "./dist"
 
@@ -21,10 +21,14 @@ const main = async () => {
   chdir()
   await rm(dist_dir)
   await mkdir(dist_dir)
-  const { code, stdout: go_root, stderr } = await run_c("go", ["env", "GOROOT"])
+  const { code, stdout, stderr } = await pipe({
+    cmd: "go",
+    args: ["env", "GOROOT"],
+  })
   if (code !== 0) {
-    throw new Error(stderr)
+    throw new Error(stderr.toString())
   }
+  const go_root = stdout.toString()
   const js_root = join(go_root.trim(), "misc/wasm/wasm_exec.js")
   const wasm_js = await slurp(js_root)
   await spit(wasm_js, "src/wasm_go.js")
@@ -48,3 +52,4 @@ const main = async () => {
 }
 
 main()
+
