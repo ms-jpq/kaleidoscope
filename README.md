@@ -24,16 +24,16 @@ I made the demo run at ludicrous speed, for a better look, you can slow things d
 
 (Settings panel to your left.)
 
-![demo](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/demo_heavy.gif)
+![demo](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/demo_heavy.gif)
 
 ## Some interesting Chaos Game fractals
 
-![hexagon_noacross_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_noacross_0.5.png)
-![sierpinski_triangle.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/sierpinski_triangle.png)
-![pentagon_noacross2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noacross2_0.5.png)
-![hexagon_noajacent_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_noajacent_0.5.png)
-![hexagon_norepeat2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_norepeat2_0.5.png)
-![hexagon_trial2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_trial2_0.5.png)
-![pentagon_noajacent2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noajacent2_0.5.png)
-![hexagon_noacross2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_noacross2_0.5.png)
-![square_noacross2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/square_noacross2_0.5.png)
+![hexagon_noacross_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_noacross_0.5.png)
+![sierpinski_triangle.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/sierpinski_triangle.png)
+![pentagon_noacross2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noacross2_0.5.png)
+![hexagon_noajacent_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_noajacent_0.5.png)
+![hexagon_norepeat2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_norepeat2_0.5.png)
+![hexagon_trial2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_trial2_0.5.png)
+![pentagon_noajacent2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noajacent2_0.5.png)
+![hexagon_noacross2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_noacross2_0.5.png)
+![square_noacross2_0.5.png](https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/square_noacross2_0.5.png)
