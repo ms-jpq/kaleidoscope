@@ -25,7 +25,7 @@ const git_clone = async () => {
     return
   } else {
     const uri = `git@github.com:ms-jpq/kaleidoscope-page.git`
-    await run({ cmd: "git", args: ["clone", uri, artifacts_dir] })
+    await run({ cmd: "git", args: ["clone", "--depth=1", uri, artifacts_dir] })
   }
 }
 
