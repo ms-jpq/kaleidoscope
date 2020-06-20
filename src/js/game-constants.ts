@@ -185,7 +185,7 @@ export type Preset = {
 
 export const PRESETS: Preset[] = [
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/sierpinski_triangle.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/sierpinski_triangle.png`,
     polygon: Polygon.triangle,
     restriction: Restriction.none,
     compression: 0.5,
@@ -193,7 +193,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/square_noacross_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/square_noacross_0.5.png`,
     polygon: Polygon.square,
     restriction: Restriction.noAcross,
     compression: 0.5,
@@ -201,7 +201,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/square_noacross2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/square_noacross2_0.5.png`,
     polygon: Polygon.square,
     restriction: Restriction.last_noAcross,
     compression: 0.5,
@@ -209,7 +209,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/square_norepeat_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/square_norepeat_0.5.png`,
     polygon: Polygon.square,
     restriction: Restriction.noSameDir,
     compression: 0.5,
@@ -217,7 +217,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/square_norepeat2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/square_norepeat2_0.5.png`,
     polygon: Polygon.square,
     restriction: Restriction.last_noSameDir,
     compression: 0.5,
@@ -225,7 +225,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_free_0.4.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_free_0.4.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.none,
     compression: 0.4,
@@ -233,7 +233,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_free_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_free_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.none,
     compression: 0.5,
@@ -241,7 +241,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_counterclockwise_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_counterclockwise_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.force_CW,
     compression: 0.5,
@@ -249,7 +249,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noacross_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noacross_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.noAcross,
     compression: 0.5,
@@ -257,7 +257,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noacross2_0.4.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noacross2_0.4.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.last_noAcross,
     compression: 0.4,
@@ -265,7 +265,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noacross2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noacross2_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.last_noAcross,
     compression: 0.5,
@@ -273,7 +273,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noajacent_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noajacent_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.noAdjacent_exclusive,
     compression: 0.5,
@@ -281,7 +281,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/pentagon_noajacent2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/pentagon_noajacent2_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.last_noAdjacent_exclusive,
     compression: 0.5,
@@ -289,7 +289,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/petagon_norepeat_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/petagon_norepeat_0.5.png`,
     polygon: Polygon.pentagon,
     restriction: Restriction.noSameDir,
     compression: 0.5,
@@ -297,7 +297,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_free_0.35.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_free_0.35.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.none,
     compression: 0.35,
@@ -305,7 +305,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_free_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_free_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.none,
     compression: 0.5,
@@ -313,7 +313,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_ccw_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_ccw_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.force_CW,
     compression: 0.5,
@@ -321,7 +321,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_noacross_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_noacross_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.noAcross,
     compression: 0.5,
@@ -329,7 +329,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_noacross2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_noacross2_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.last_noAcross,
     compression: 0.5,
@@ -337,7 +337,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_noajacent_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_noajacent_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.noAdjacent_exclusive,
     compression: 0.5,
@@ -345,7 +345,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_norepeat_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_norepeat_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.noSameDir,
     compression: 0.5,
@@ -353,7 +353,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_norepeat2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_norepeat2_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.last_noSameDir,
     compression: 0.5,
@@ -361,7 +361,7 @@ export const PRESETS: Preset[] = [
     colourB: [1, 0.08, 0.58, 1],
   },
   {
-    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexagon_trial2_0.5.png`,
+    image: `https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexagon_trial2_0.5.png`,
     polygon: Polygon.hexagon,
     restriction: Restriction.last_noAdjacent_inclusive,
     compression: 0.5,

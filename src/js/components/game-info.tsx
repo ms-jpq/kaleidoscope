@@ -26,7 +26,7 @@ export const GameInfo = (props: Props) => {
               <div className={"media"}>
                 <img
                   className={_("mr-3", "w-25")}
-                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/hexa.gif`}
+                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/hexa.gif`}
                 />
                 <div className={"media-body"}>
                   <h4 className={"mt-0"}>{Lang("how does it work")}</h4>
@@ -46,7 +46,7 @@ export const GameInfo = (props: Props) => {
               <div className={"media"}>
                 <img
                   className={_("mr-3", "w-25")}
-                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/wolfram.gif`}
+                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/wolfram.gif`}
                 />
                 <div className={"media-body"}>
                   <h4 className={"mt-0"}>{Lang("mathematica chaos")}</h4>
@@ -66,7 +66,7 @@ export const GameInfo = (props: Props) => {
               <div className={"media"}>
                 <img
                   className={_("mr-3", "w-25")}
-                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/six_fractals.jpg`}
+                  src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/six_fractals.jpg`}
                 />
                 <div className={"media-body"}>
                   <h4 className={"mt-0"}>{Lang("rectangle world")}</h4>

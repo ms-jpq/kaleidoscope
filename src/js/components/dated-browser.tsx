@@ -43,7 +43,7 @@ export const OutdatedBrowser = (props: Props) => {
                 >
                   <img
                     className={_("img-fluid", "rounded", "w-100", "h-auto")}
-                    src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/firefox.png`}
+                    src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/firefox.png`}
                   />
                 </a>
                 <span className={"mx-4"} />
@@ -60,7 +60,7 @@ export const OutdatedBrowser = (props: Props) => {
                 >
                   <img
                     className={_("img-fluid", "rounded", "w-100", "h-auto")}
-                    src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/master/_assets/chrome.png`}
+                    src={`https://raw.githubusercontent.com/ms-jpq/Kaleidoscope/kaleidoscope/_assets/chrome.png`}
                   />
                 </a>
               </div>

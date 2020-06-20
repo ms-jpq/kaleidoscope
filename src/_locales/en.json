@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/ms-jpq/json_schemas/master/web_ext_i18n.json",
+  "$schema": "https://raw.githubusercontent.com/ms-jpq/json_schemas/kaleidoscope/web_ext_i18n.json",
   "@%": {
     "message": "@%"
   },
