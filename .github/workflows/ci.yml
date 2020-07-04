@@ -4,7 +4,8 @@ name: CI
 
 on:
   push:
-  pull_request:
+    branches: 
+      - kaleidoscope
   schedule:
     - cron: "0 0 * * *" # daily
 
