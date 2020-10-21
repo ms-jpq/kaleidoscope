@@ -24,7 +24,7 @@
     "nda": "git+https://github.com/ms-jpq/nda.git#14dcf0c939ff44b1e909910fd0b538a08595ed80",
     "parcel-bundler": "^1.12.4",
     "popper.js": "^1.16.1",
-    "react": "^16.13.0",
+    "react": "^17.0.0",
     "react-dom": "^16.13.0",
     "sass": "^1.26.3"
   },
