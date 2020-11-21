@@ -21,7 +21,7 @@
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",
-    "nda": "git+https://github.com/ms-jpq/nda.git#14dcf0c939ff44b1e909910fd0b538a08595ed80",
+    "nda": "git+https://github.com/ms-jpq/nda.git#0bf4b67d6358feabdb26f85741e7b20be2921da9",
     "parcel-bundler": "^1.12.4",
     "popper.js": "^1.16.1",
     "react": "^17.0.0",
