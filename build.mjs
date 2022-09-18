@@ -53,10 +53,18 @@ const main = async () => {
     if (process.argv[2] === "--dev") {
       return []
     } else {
-      return ["--public-url", "/kaleidoscope-page"]
+      return ["--base", "/kaleidoscope-page"]
     }
   })()
-  run({}, "parcel", "build", ...out, "src/index.html")
+  run(
+    {},
+    "vite",
+    "build",
+    "--config",
+    join(top_level, "vite.config.js"),
+    ...out,
+    join(top_level, "src"),
+  )
 }
 
 main()
