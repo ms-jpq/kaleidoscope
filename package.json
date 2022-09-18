@@ -22,7 +22,7 @@
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",
-    "nda": "https://github.com/ms-jpq/nda/archive/b96c0d986808221ff63b3c15a32d5395db24bf52.tar.gz",
+    "nda": "https://github.com/ms-jpq/nda/archive/3d624e6b3f267c67a47c635f25ce65a97696804f.tar.gz",
     "parcel-bundler": "^1.12.4",
     "popper.js": "^1.16.1",
     "react": "^17.0.0",
@@ -31,29 +31,14 @@
   },
   "description": "",
   "devDependencies": {
-    "@types/cors": "*",
-    "@types/express": "*",
     "@types/node": "*",
-    "@types/nodemon": "*",
-    "@typescript-eslint/eslint-plugin": "*",
-    "@typescript-eslint/parser": "*",
-    "cors": "*",
-    "eslint": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-prettier": "*",
-    "express": "*",
-    "nodemon": "*",
-    "parse-gitignore": "*",
-    "prettier": "*",
-    "ts-node": "*",
     "typescript": "*"
   },
   "license": "MIT",
   "scripts": {
-    "build": "./build.ts",
-    "lint": "eslint \"**/*.ts\" \"**/*.tsx\"",
-    "pretty": "prettier --write \"**/*.ts\" \"**/*.tsx\"",
-    "release": "./release.ts"
+    "build": "./build.mjs",
+    "release": "./release.mjs"
   },
+  "type": "module",
   "version": "1.0.0"
 }

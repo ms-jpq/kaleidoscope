@@ -3,26 +3,22 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "checkJs": false,
+    "checkJs": true,
     "declaration": true,
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "jsx": "react",
-    "module": "commonjs",
-    "moduleResolution": "Node",
-    "newLine": "LF",
+    "module": "nodenext",
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "outDir": "tsc",
+    "noUncheckedIndexedAccess": true,
+    "outDir": "dist",
     "removeComments": true,
-    "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "ESNext",
-    "useDefineForClassFields": true
+    "target": "esnext"
   },
   "exclude": ["node_modules", "test", "dist", "tsc"],
-  "include": ["*.ts", "*.tsx", "*/**/*.ts", "*/**/*.tsx"]
+  "include": ["*.ts", "*.tsx", "*/**/*.ts", "*/**/*.tsx", "*.mjs"]
 }
