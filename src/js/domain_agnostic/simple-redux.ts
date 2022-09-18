@@ -30,7 +30,7 @@ export const ApplyMiddlewares = <S, A>(
 ) => {
   const [m1, ...m] = [fst, ...middlewares].reverse()
   return (fetch: Fetch<S>, dispatch: Dispatch<A>) =>
-    m.reduce((d, middleware) => middleware(fetch, d), m1(fetch, dispatch))
+    m.reduce((d, middleware) => middleware(fetch, d), m1!(fetch, dispatch))
 }
 
 export const ApplyReducers = <S, A>(
@@ -43,6 +43,7 @@ export const CombineReducers = <S, A>(
   reducers: { [K in keyof S]: Reducer<S[K], any> },
 ): Reducer<S, A> => (state, action) =>
   Object.entries<Reducer<any, any>>(reducers).reduce(
+    //@ts-ignore
     (acc, [key, reducer]) => ({ ...acc, [key]: reducer(state[key], action) }),
     {},
   ) as S

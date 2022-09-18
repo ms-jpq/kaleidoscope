@@ -1,18 +1,20 @@
 import en from "../_locales/en.json"
-import React from "react"
-import { DEFAULT_STATE, PRESETS } from "./game-constants"
-import { GoExports, Instantiate } from "./interlope"
-import { NewI18n } from "./domain_agnostic/i18n"
-import { NewStateStore } from "./redux/state"
-import { Page } from "./components/page"
-import { PageLoaded, WasmLoaded } from "./redux/thunk-actions"
-import { render } from "react-dom"
-import { shuffle } from "nda/dist/isomorphic/rand"
 import "../wasm_go.js"
-import $ from "jquery"
-window["$"] = window["jQuery"] = $
-import "jquery-ui-dist/jquery-ui.js"
+import { Page } from "./components/page.js"
+import { NewI18n } from "./domain_agnostic/i18n.js"
+import { shuffle } from "./domain_agnostic/utils.js"
+import { DEFAULT_STATE, PRESETS } from "./game-constants.js"
+import { GoExports, Instantiate } from "./interlope.js"
+import { NewStateStore } from "./redux/state.js"
+import { PageLoaded, WasmLoaded } from "./redux/thunk-actions.js"
 import "bootstrap"
+import $ from "jquery"
+import "jquery-ui-dist/jquery-ui.js"
+import React from "react"
+import { render } from "react-dom"
+
+//@ts-ignore
+globalThis["$"] = globalThis["jQuery"] = $
 
 const go = async () => {
   const { run, retrieve } = await Instantiate("main.wasm")
@@ -22,9 +24,8 @@ const go = async () => {
   const NewCompression: GoExports["NewCompression"] = retrieve("NewCompression")
   const NewDots: GoExports["NewDots"] = retrieve("NewDots")
   const NewVertex: GoExports["NewVertex"] = retrieve("NewVertex")
-  const RequestDrawingInstructions: GoExports["RequestDrawingInstructions"] = retrieve(
-    "RequestDrawingInstructions",
-  )
+  const RequestDrawingInstructions: GoExports["RequestDrawingInstructions"] =
+    retrieve("RequestDrawingInstructions")
   return {
     NewVertices,
     NewRestriction,

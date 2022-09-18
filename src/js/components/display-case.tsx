@@ -1,9 +1,9 @@
+import { I18n } from "../domain_agnostic/i18n.js"
+import { Preset } from "../game-constants.js"
+import { Store } from "../redux/state.js"
+import { NewPreset } from "../redux/thunk-actions.js"
+import { cn as _ } from "nda/iso/dom.js"
 import React from "react"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { I18n } from "../domain_agnostic/i18n"
-import { NewPreset } from "../redux/thunk-actions"
-import { Preset } from "../game-constants"
-import { Store } from "../redux/state"
 
 type Props = {
   store: Store

@@ -1,10 +1,10 @@
+import { I18n } from "../domain_agnostic/i18n.js"
+import { Colour, Store } from "../redux/state.js"
+import { NewDrawTracer } from "../redux/thunk-actions.js"
+import { AccordionSection } from "./accordion.js"
+import { ColourInputGroup } from "./colour-picker.js"
+import { cn as _ } from "nda/iso/dom.js"
 import React from "react"
-import { AccordionSection } from "./accordion"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { Colour, Store } from "../redux/state"
-import { ColourInputGroup } from "./colour-picker"
-import { I18n } from "../domain_agnostic/i18n"
-import { NewDrawTracer } from "../redux/thunk-actions"
 
 type Props = {
   Lang: I18n

@@ -1,5 +1,5 @@
-import { Colour, State } from "./redux/state"
-import { range } from "nda/dist/isomorphic/iterator"
+import { Colour, State } from "./redux/state.js"
+import { range } from "nda/iso/iterator.js"
 
 export enum Polygon {
   triangle = 3,
@@ -398,4 +398,3 @@ export const DEFAULT_STATE: State = {
   },
   recording: { status: "not-recording" },
 }
-

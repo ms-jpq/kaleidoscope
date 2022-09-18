@@ -1,7 +1,7 @@
+import { I18n } from "../domain_agnostic/i18n.js"
+import { AccordionSection } from "./accordion.js"
+import { cn as _ } from "nda/iso/dom.js"
 import React from "react"
-import { AccordionSection } from "./accordion"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { I18n } from "../domain_agnostic/i18n"
 
 type Props = {
   Lang: I18n

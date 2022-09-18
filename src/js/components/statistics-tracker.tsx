@@ -1,7 +1,7 @@
+import { I18n } from "../domain_agnostic/i18n.js"
+import { Store } from "../redux/state.js"
+import { cn as _ } from "nda/iso/dom.js"
 import React from "react"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { I18n } from "../domain_agnostic/i18n"
-import { Store } from "../redux/state"
 
 type Props = {
   Lang: I18n

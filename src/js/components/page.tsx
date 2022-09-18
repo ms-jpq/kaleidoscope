@@ -1,26 +1,26 @@
-import React from "react"
-import { Accordion } from "./accordion"
-import { Between } from "../domain_agnostic/utils"
-import { CanvasControl } from "./canvas-controls"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { DisplayCase } from "./display-case"
-import { GameControl } from "./game-controls"
-import { GameInfo } from "./game-info"
-import { I18n } from "../domain_agnostic/i18n"
-import { InfoModal } from "./info-modal"
-import { Loaders } from "./loaders"
-import { OutdatedBrowser } from "./dated-browser"
-import { Preset } from "../game-constants"
-import { SaveMedia } from "./save-media"
-import { StatisticsTracker } from "./statistics-tracker"
-import { Store } from "../redux/state"
-import { throttle } from "nda/dist/isomorphic/decorator"
+import { I18n } from "../domain_agnostic/i18n.js"
+import { Between } from "../domain_agnostic/utils.js"
+import { Preset } from "../game-constants.js"
+import { Store } from "../redux/state.js"
 import {
   NewCanvas,
   NewFrameSize,
   NewVertex,
   ResetGame,
-} from "../redux/thunk-actions"
+} from "../redux/thunk-actions.js"
+import { Accordion } from "./accordion.js"
+import { CanvasControl } from "./canvas-controls.js"
+import { OutdatedBrowser } from "./dated-browser.js"
+import { DisplayCase } from "./display-case.js"
+import { GameControl } from "./game-controls.js"
+import { GameInfo } from "./game-info.js"
+import { InfoModal } from "./info-modal.js"
+import { Loaders } from "./loaders.js"
+import { SaveMedia } from "./save-media.js"
+import { StatisticsTracker } from "./statistics-tracker.js"
+import { throttle } from "nda/iso/decorator.js"
+import { cn as _ } from "nda/iso/dom.js"
+import React from "react"
 
 type Props = {
   Lang: I18n

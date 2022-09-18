@@ -1,7 +1,5 @@
-import { GoExports } from "../interlope"
-import { Recorder } from "../domain_agnostic/recorder"
-import { Polygon, Restriction, Speed } from "../game-constants"
-import { Render } from "../canvas/canvas"
+import { Render } from "../canvas/canvas.js"
+import { Recorder } from "../domain_agnostic/recorder.js"
 import {
   ApplyReducers,
   CombineReducers,
@@ -9,7 +7,9 @@ import {
   NewThunkMiddleware,
   Reducer,
   ThunkAction,
-} from "../domain_agnostic/simple-redux"
+} from "../domain_agnostic/simple-redux.js"
+import { Polygon, Restriction, Speed } from "../game-constants.js"
+import { GoExports } from "../interlope.js"
 
 export type Colour = [number, number, number, number]
 export type ColourLocation =

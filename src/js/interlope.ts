@@ -1,4 +1,4 @@
-import { Polygon, Restriction } from "./game-constants"
+import { Polygon, Restriction } from "./game-constants.js"
 
 declare const Go: any
 

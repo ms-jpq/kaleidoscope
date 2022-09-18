@@ -1,9 +1,9 @@
 //@ts-ignore
 import Huebee from "huebee"
+import { Colour } from "../redux/state.js"
+import { cn as _ } from "nda/iso/dom.js"
+import { $ as $_ } from "nda/web/dom.js"
 import React from "react"
-import { $ as $_ } from "nda/dist/browser/dom"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { Colour } from "../redux/state"
 
 const Hex = {
   "0": 0,
@@ -62,8 +62,10 @@ export const ColourPicker = (props: Props) => {
         })
         bee.setColor(`#${[R, G, B].join("")}`)
         bee.on("change", (hex: string) => {
-          const [, R, G, B] = hex.split("").map((c) => Hex[c] / 15)
-          onChange([R, G, B, 1])
+          const [, R, G, B] = hex
+            .split("")
+            .map((c) => Hex[c as keyof typeof Hex]! / 15)
+          onChange([R!, G!, B!, 1])
         })
       })
   }, [])

@@ -1,5 +1,5 @@
 import React from "react"
-import { AccordionSection } from "./accordion"
+import { AccordionSection } from "./accordion.js"
 import {
   AllowableRestrictions,
   Polygon,
@@ -7,16 +7,16 @@ import {
   Restriction,
   Speed,
   Speeds,
-} from "../game-constants"
-import { cn as _ } from "nda/dist/isomorphic/dom"
-import { I18n } from "../domain_agnostic/i18n"
+} from "../game-constants.js"
+import { cn as _ } from "nda/iso/dom.js"
+import { I18n } from "../domain_agnostic/i18n.js"
 import {
   NewCompression,
   NewPolygon,
   NewRestriction,
   NewSpeed,
-} from "../redux/thunk-actions"
-import { Store } from "../redux/state"
+} from "../redux/thunk-actions.js"
+import { Store } from "../redux/state.js"
 
 type PProps = {
   htmlFor: string

@@ -1,4 +1,4 @@
-import { CanvasViewport, Viewport } from "./types"
+import { CanvasViewport, Viewport } from "./types.js"
 
 export type FrameBufferTarget = "read" | "draw" | "both"
 

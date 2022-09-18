@@ -1,15 +1,18 @@
-import fragmentShader from "../../shaders/shader.frag"
 import offscreenShader from "../../shaders/offscreen-shader.vert"
 import onscreenShader from "../../shaders/onscreen-shader.vert"
-import { Colours } from "../redux/state"
-import { DrawingInstructions, ReleaseDrawingInstructions } from "../interlope"
+import fragmentShader from "../../shaders/shader.frag"
+import {
+  DrawingInstructions,
+  ReleaseDrawingInstructions,
+} from "../interlope.js"
+import { Colours } from "../redux/state.js"
 import {
   NewColourRenderbuffer,
   UseArrayBuffer,
   ColourRenderBuffer,
-} from "./buffers"
-import { NewProgram } from "./program"
-import { Viewport } from "./types"
+} from "./buffers.js"
+import { NewProgram } from "./program.js"
+import { Viewport } from "./types.js"
 
 const vec2Size = 2
 const vec3Size = 3

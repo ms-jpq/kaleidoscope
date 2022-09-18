@@ -1,5 +1,5 @@
+import { cn as _ } from "nda/iso/dom.js"
 import React from "react"
-import { cn as _ } from "nda/dist/isomorphic/dom"
 
 export const Accordion = (props: { children: React.ReactNode }) => (
   <div className={"accordion"}>{props.children}</div>

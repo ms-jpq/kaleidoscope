@@ -1,11 +1,12 @@
-import { PromiseType } from "nda/dist/typings"
-
 export const NewI18n = (
   store: Record<string, { message: string }>,
   warn: boolean,
 ) => {
   return (key: string, ...symbols: (string | number)[]): string => {
-    const replace = ((idx) => () => symbols[idx++] as string)(0)
+    const replace = (
+      (idx) => () =>
+        symbols[idx++] as string
+    )(0)
     if (warn && !Reflect.has(store, key)) {
       console.error(`Missing i18n key: ${key}`)
     }
